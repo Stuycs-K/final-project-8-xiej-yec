@@ -16,4 +16,8 @@ public class Weapon{
   public String getName(){
     return name;
   }
+  
+  public int doDmg(Character charHP, Weapon weapon){
+    return charHP - weapon.getDmg();
+  }
 }
