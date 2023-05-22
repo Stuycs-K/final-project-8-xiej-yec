@@ -1,4 +1,4 @@
-class Weapon{
+public class Weapon{
   private String name;
   private int dmg;
   private double rarity;
@@ -8,4 +8,10 @@ class Weapon{
     this.dmg = dmg;
     this.rarity = rarity;
   }
+  
+  public int getDmg(){
+    return dmg;
+  }
+  
+  
 }
