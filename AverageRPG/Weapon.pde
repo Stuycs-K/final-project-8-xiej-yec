@@ -13,5 +13,7 @@ public class Weapon{
     return dmg;
   }
   
-  
+  public String getName(){
+    return name;
+  }
 }
