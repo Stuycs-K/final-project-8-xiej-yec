@@ -6,6 +6,8 @@
 
 CLASSWORK: Created Player branch in which Character class and Player class are located. Created constructors for Character superclass and Player subclass, but still need to create Enemy subclass.
 
+HOMEWORK: Added classes for enemy and NPC characters. Also tweaked character parent class to include more functions and fixed constructor.
+
 ### date y
 
 info
