@@ -25,4 +25,5 @@ dialogue.
 
 ### 5/23/23
 
-CLASSWORK: Add set and get methods for the speed in the Bullet class. 
+CLASSWORK: Add set and get methods for the speed in the Bullet class. Update bullet class to include associated Gun and amount
+of damage
