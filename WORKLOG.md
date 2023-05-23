@@ -11,11 +11,15 @@ CLASSWORK: Created Player branch in which Character class and Player class are l
 info
 
 
-## GROUP MEMBER 2
+## GROUP MEMBER 2 (Casey Ye)
 
-### date x
+### 5/22/23
 
-info
+CLASSWORK: Created Weapon branch with the Weapon class and the Gun and Sword subclasses. This includes some constructors
+and basic methods. These are still going to be updated as the game is developed.
+
+HOMEWORK: Add more methods to the Gun class and created Bullet class and constructor. Started drafting dialogue for the
+dialogue.
 
 ### date y
 
