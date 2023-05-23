@@ -21,6 +21,6 @@ and basic methods. These are still going to be updated as the game is developed.
 HOMEWORK: Add more methods to the Gun class and created Bullet class and constructor. Started drafting dialogue for the
 dialogue.
 
-### date y
+### 5/23/23
 
-info
+CLASSWORK: Add set and get methods for the speed in the Bullet class. 
