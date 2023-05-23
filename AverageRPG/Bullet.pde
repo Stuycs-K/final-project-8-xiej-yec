@@ -10,5 +10,9 @@ public class Bullet{
     //this.accel = accel;
   }
   
+  public void setSpeed(int newSpd){
+    speed = newSpd;
+  }
   
+   
 }
