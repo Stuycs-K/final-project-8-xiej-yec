@@ -18,6 +18,9 @@ info
 CLASSWORK: Created Weapon branch with the Weapon class and the Gun and Sword subclasses. This includes some constructors
 and basic methods. These are still going to be updated as the game is developed.
 
+HOMEWORK: Add more methods to the Gun class and created Bullet class and constructor. Started drafting dialogue for the
+dialogue.
+
 ### date y
 
 info
