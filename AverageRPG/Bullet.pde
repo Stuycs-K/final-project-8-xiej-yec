@@ -14,5 +14,8 @@ public class Bullet{
     speed = newSpd;
   }
   
+   public int getSpeed(){
+     return speed;
+   }
    
 }
