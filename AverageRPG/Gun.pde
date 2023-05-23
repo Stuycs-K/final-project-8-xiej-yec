@@ -11,5 +11,10 @@ public class Gun extends Weapon{
     this.totalBulletCount = totalBulletCount;
   }
   
+  public void reload(){
+   if (totalBulletCount == 0){
+     currentBulletCount = totalBulletCount;
+   }
+  }
   
 }
