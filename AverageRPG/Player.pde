@@ -1,4 +1,4 @@
-public class Player extends Character {
+public class Player extends Characters {
   private int coins;
   private ArrayList<Weapon> weapons;
   

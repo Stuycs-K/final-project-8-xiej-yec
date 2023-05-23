@@ -1,13 +1,16 @@
-ArrayList<Weapon> weaponList = new ArrayList<Weapon>(3);
-weaponList.add(new Weapon("fist", 5, .01));
+//ArrayList<Weapon> weaponList = new ArrayList<Weapon>();
+//Weapon fist = new Weapon("fist", 5, .1);
+//weaponList.add(fist);
   
-Player player = new Player(weaponList, new PVector(0, 0));
+  
+
+Characters player = new Characters("John", 20, 20, new Weapon("fist", 5, .01), new PVector(0, 0), true);
 
 void setup() {
   size(1000, 1000);
-  
-
 }
+
+
 
 void draw() {
   player.displayCharacter();

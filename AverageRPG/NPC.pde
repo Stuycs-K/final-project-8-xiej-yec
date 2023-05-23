@@ -1,4 +1,4 @@
-public class Player extends Character {
+public class NPC extends Characters {
   private String[] dialogue;
   
   public NPC(String name, PVector position_, String[] dialogueTree_) {
