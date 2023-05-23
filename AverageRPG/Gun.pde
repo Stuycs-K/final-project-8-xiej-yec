@@ -4,14 +4,11 @@ public class Gun extends Weapon{
   private int totalBulletCount;
 
   //TODO: Update when you make bullet
-  public Gun(String name, int dmg, double rarity, ){
+  public Gun(String name, int dmg, double rarity, int totalBulletCount){
     super(name, dmg, rarity);
     Bulllet bullet = new Bullet();
-  }
-  
-  //TODO: Update when items 
-  public void reload(){
-    
+    currentBulletCount = 0;
+    this.totalBulletCount = totalBulletCount;
   }
   
   
