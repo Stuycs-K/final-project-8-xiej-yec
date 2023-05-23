@@ -2,17 +2,15 @@ public class Character {
   private String name;
   private int maxHP;
   private int HP;
-  private Weapon[3] weapons;
   private Weapon weaponHolding;
   PVector position;
   boolean isFriendly;
   
-  public class Character(String name_, int maxHP_, int HP_, Weapon[] weapons_, PVector position_, boolean isFriendly_) {
+  public Character(String name_, int maxHP_, int HP_, Weapon weapon_, PVector position_, boolean isFriendly_) {
     name = name_;
     maxHP = maxHP_;
     HP = HP_;
-    weapons = weapons_;
-    weaponHolding = weapons[0];
+    weaponHolding = weapon_;
     position = position_;
     isFriendly = isFriendly_;
   }
@@ -20,8 +18,16 @@ public class Character {
   public void displayCharacter() { //include health bar and sprites
     int x = position.x;
     int y = position.y;
+    circle(x, y, 20);
   }
   
-  
-  
+  public void takeDMG(int damage) {
+    HP -= damage;
+  }
+  public void useWeapon(Weapon weapon) {
+    
+  }
+  public void move(PVector movement) {
+    
+  }
 }
