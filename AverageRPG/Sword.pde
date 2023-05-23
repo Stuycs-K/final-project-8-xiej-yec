@@ -5,4 +5,6 @@ public class Sword extends Weapon{
     super(name, dmg, rarity);
     this.durability = durability;
   }
+  
+  
 }
