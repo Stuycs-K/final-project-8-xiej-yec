@@ -1,10 +1,10 @@
-//import java.util.*;
+import java.util.*;
 //ArrayList<Weapon> weaponList = new ArrayList<Weapon>();
 //weaponList.add(new Weapon("fist", 5, .1));
   
   
 
-Player player = new Player(new PVector(100, 100));
+Player player = new Player(new Weapon("fist", 5, .1), new PVector(100, 100));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;

@@ -1,3 +1,4 @@
+import java.util.*;
 public class Characters {
   private String name;
   private int maxHP;
