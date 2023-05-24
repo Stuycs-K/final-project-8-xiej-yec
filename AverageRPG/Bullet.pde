@@ -32,8 +32,8 @@ public class Bullet{
    
    public void doDmg(Character char){
      //check math for position
-     if (position.x < char.position.x - radius || position.x > char.position.x + radius) && (position.y < char.position.y - radius || position.y > char.position.y + radius){
-       char.getHp() - dmg;
+     if (position.x >= char.position.x - radius || position.x <= char.position.x + radius) && (position.y >= char.position.y - radius || position.y <= char.position.y + radius){
+       char.getHp() -= dmg;
      }
    }
    
