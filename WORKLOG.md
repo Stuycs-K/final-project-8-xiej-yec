@@ -32,3 +32,10 @@ of damage.
 
 HOMEWORK: Update Bullet class to include a doDmg method and updated how position and velocity (previously speed) is initialized.
 ALso updated character with the same PVector position issues and added getter methods that would be used in Bullet
+
+### 5/24/23
+
+CLASSWORK: Add move() to Bullet and got started on a Room class
+
+HOMEWORK: Update Bullet class to include a doDmg method and updated how position and velocity (previously speed) is initialized.
+ALso updated character with the same PVector position issues and added getter methods that would be used in Bullet
