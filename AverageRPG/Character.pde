@@ -11,7 +11,8 @@ public class Character {
     maxHP = maxHP_;
     HP = HP_;
     weaponHolding = weapon_;
-    position = position_;
+    //position = position_;
+    position = new PVector(x, y);
     isFriendly = isFriendly_;
   }
   
@@ -29,5 +30,13 @@ public class Character {
   }
   public void move(PVector movement) {
     
+  }
+  
+  public String getName(){
+    return name;
+  }
+  
+  public int getHp(){
+    return HP;
   }
 }
