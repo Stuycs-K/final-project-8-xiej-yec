@@ -27,7 +27,7 @@ public class Characters {
   public void useWeapon(Weapon weapon) {
     
   }
-  public void move(PVector movement) {
-    
+  public void changePosition(PVector movement) {
+    position.add(movement);
   }
 }
