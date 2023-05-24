@@ -14,7 +14,7 @@ public class Bullet{
     this.radius = radius;
     //this.accel = accel;
   }
-  
+ 
   //public void setSpeed(int newSpd){
   //  speed = newSpd;
   //}
