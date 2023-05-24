@@ -18,7 +18,7 @@ public class Characters {
   public void displayCharacter() { //include health bar and sprites
     float x = position.x;
     float y = position.y;
-    circle(x, y, 20);
+    rect(x - 10, y - 10, 20, 20);
   }
   
   public void takeDMG(int damage) {

@@ -6,7 +6,10 @@
 
 Player player = new Player(new PVector(100, 100));
 PVector movementVector = new PVector(0, 0);
-char pressed = '\0';
+boolean W = false;
+boolean A = false;
+boolean S = false;
+boolean D = false;
 
 void setup() {
   size(1000, 1000);
@@ -19,55 +22,49 @@ void draw() {
   player.displayCharacter();
 
   text(key, 500, 500);
-  text(pressed, 600, 500);
-  
-  if (pressed != '\0') {
-    if (key == 'w' || pressed == 'w') {
-      movementVector.add(new PVector(0, -5));
-    }
-    if (key == 'a'|| pressed == 'a') {
-      movementVector.add(new PVector(-5, 0));
-    }
-    if (key == 's'|| pressed == 's') {
-      movementVector.add(new PVector(0, 5));
-    }
-    if (key == 'd'|| pressed == 'd') {
-      movementVector.add(new PVector(5, 0));
-    }
-    
-    player.move(movementVector);
-    movementVector = new PVector(0, 0);
+   
+  if (W) {
+    movementVector.add(new PVector(0, -5));
   }
+  if (A) {
+    movementVector.add(new PVector(-5, 0));
+  }
+  if (S) {
+    movementVector.add(new PVector(0, 5));
+  }
+  if (D) {
+    movementVector.add(new PVector(5, 0));
+  } 
+  
+  player.move(movementVector);
+  movementVector = new PVector(0, 0);
 }
 
 void keyPressed() {
-  if (pressed == '\0') {
-    pressed = key;
+  
+  if (key == 'w' || key == 'W') {
+    W = true;
+  }
+  if (key == 'a' || key == 'A') {
+    A = true;
+  }
+  if (key == 's' || key == 'S') {
+    S = true;
+  }
+  if (key == 'd' || key == 'D') {
+    D = true;
   }
   
-  
-  //if (pressed == 'w' || pressed == 'W') {
+  //if (W) {
   //  movementVector.add(new PVector(0, -5));
   //}
-  //if (pressed == 'a' || pressed == 'A') {
+  //if (A) {
   //  movementVector.add(new PVector(-5, 0));
   //}
-  //if (pressed == 's' || pressed == 'S') {
+  //if (S) {
   //  movementVector.add(new PVector(0, 5));
   //}
-  //if (pressed == 'd' || pressed == 'D') {
-  //  movementVector.add(new PVector(5, 0));
-  //}
-  //if (key == 'w' || key == 'W') {
-  //  movementVector.add(new PVector(0, -5));
-  //}
-  //if (key == 'a' || key == 'A') {
-  //  movementVector.add(new PVector(-5, 0));
-  //}
-  //if (key == 's' || key == 'S') {
-  //  movementVector.add(new PVector(0, 5));
-  //}
-  //if (key == 'd' || key == 'D') {
+  //if (D) {
   //  movementVector.add(new PVector(5, 0));
   //}
   
@@ -76,8 +73,17 @@ void keyPressed() {
   
 }
 void keyReleased() {
-
-  if (!keyPressed) {
-    pressed = '\0';
+  
+  if (key == 'w' || key == 'W') {
+    W = false;
+  }
+  if (key == 'a' || key == 'A') {
+    A = false;
+  }
+  if (key == 's' || key == 'S') {
+    S = false;
+  }
+  if (key == 'd' || key == 'D') {
+    D = false;
   }
 }
