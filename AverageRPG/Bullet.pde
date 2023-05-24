@@ -14,6 +14,13 @@ public class Bullet{
     this.radius = radius;
     //this.accel = accel;
   }
+
+  public void displayBullet() {
+    int x = position.x;
+    int y = position.y;
+    circle(x, y, raidus*2);
+  }
+  
   
   //public void setSpeed(int newSpd){
   //  speed = newSpd;
