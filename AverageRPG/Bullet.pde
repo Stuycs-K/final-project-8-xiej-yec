@@ -15,16 +15,19 @@ public class Bullet{
     //this.accel = accel;
   }
   
-  public void setSpeed(int newSpd){
-    speed = newSpd;
-  }
+  //public void setSpeed(int newSpd){
+  //  speed = newSpd;
+  //}
   
-   public int getSpeed(){
-     return speed;
-   }
+  // public int getSpeed(){
+  //   return speed;
+  // }
    
    public void doDmg(Character char){
-     if (
+     //check math for position
+     if (position.x < char.position.x - radius || position.x > char.position.x + radius) && (position.y < char.position.y - radius || position.y > char.position.y + radius){
+       char.getHp() - dmg;
+     }
    }
    
 }
