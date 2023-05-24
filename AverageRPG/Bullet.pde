@@ -1,15 +1,14 @@
-public class Bullet{
-  private PVector pos;
-  private int speed;
+public class Bullet{  
+  Pvector position, velocity
   private Gun gun;
   private int dmg;
-  private int radius;
+  private float radius;
   //private int accel;
   
   //add acceleration if there's time
-  public Bullet(PVector pos, int speed, Gun gun, int radius){
-    this.pos = pos;
-    this.speed = speed;
+  public Bullet(float x, float y, float xSpeed, float ySpeed, Gun gun, float radius){
+    position = new PVector(x, y);
+    velocity = new PVector(xSpeed, ySpeed);
     this.gun = gun;
     dmg = gun.getDmg;
     this.radius = radius;
@@ -24,5 +23,8 @@ public class Bullet{
      return speed;
    }
    
+   public void doDmg(Character char){
+     if (
+   }
    
 }
