@@ -8,9 +8,11 @@ CLASSWORK: Created Player branch in which Character class and Player class are l
 
 HOMEWORK: Added classes for enemy and NPC characters. Also tweaked character parent class to include more functions and fixed constructor.
 
-### date y
+### 5/23/23
 
-info
+CLASSWORK: Add code that allows characters to be displayed onto the screen (to test moving)
+
+HOMEWORK: Attempt to add movement functions (able to add UP/DOWN/LEFT/RIGHT movement, but troubled by diagonal movement)
 
 
 ## GROUP MEMBER 2 (Casey Ye)
