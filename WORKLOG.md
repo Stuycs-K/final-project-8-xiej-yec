@@ -26,4 +26,7 @@ dialogue.
 ### 5/23/23
 
 CLASSWORK: Add set and get methods for the speed in the Bullet class. Update bullet class to include associated Gun and amount
-of damage
+of damage.
+
+HOMEWORK: Update Bullet class to include a doDmg method and updated how position and velocity (previously speed) is initialized.
+ALso updated character with the same PVector position issues and added getter methods that would be used in Bullet
