@@ -4,7 +4,7 @@ import java.util.*;
   
   
 
-Player player = new Player(new Gun("pistol", 5, .1, 10), new PVector(100, 100));
+Player player = new Player(new Gun("pistol", 5, 10), new PVector(100, 100));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
