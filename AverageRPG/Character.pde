@@ -30,4 +30,12 @@ public class Character {
   public void move(PVector movement) {
     
   }
+  
+  public int getX(){
+    return position.x;
+  }
+  
+    public int getY(){
+    return position.y;
+  }
 }
