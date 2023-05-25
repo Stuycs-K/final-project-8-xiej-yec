@@ -3,7 +3,7 @@ public class EnemyGrunt extends Characters {
     super(name_, maxHP_, HP_, weapon, position_, false);
   }
   
-    public void displayCharacter() { //include health bar and sprites
+    public void displayEnemy() { //include health bar and sprites
     float x = position.x;
     float y = position.y;
     circle(x, y, 20);
