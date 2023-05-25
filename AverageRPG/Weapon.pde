@@ -20,4 +20,18 @@ public class Weapon{
   public int doDmg(Character charHP, Weapon weapon){
     return charHP - weapon.getDmg();
   }
+  
+  public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+    float speed = 7; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
+    
+    PVector direction = PVector.sub(destination, origin);
+    direction.normalize();
+    
+    direction.mult(speed);
+    
+    return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
+    
+  }
+    
+  
 }

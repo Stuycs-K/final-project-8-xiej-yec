@@ -4,12 +4,14 @@ import java.util.*;
   
   
 
-Player player = new Player(new Weapon("fist", 5, .1), new PVector(100, 100));
+Player player = new Player(new Gun("pistol", 5, .1, 10), new PVector(100, 100));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
 boolean S = false;
 boolean D = false;
+boolean shoot = false;
+ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 void setup() {
   size(1000, 1000);
@@ -23,21 +25,37 @@ void draw() {
 
   text(key, 500, 500);
    
-  if (W) {
-    movementVector.add(new PVector(0, -5));
+  if (W && player.getPosition().y > 0) {
+    movementVector.add(new PVector(0, -4));
   }
-  if (A) {
-    movementVector.add(new PVector(-5, 0));
+  if (A && player.getPosition().x > 0) {
+    movementVector.add(new PVector(-4, 0));
   }
-  if (S) {
-    movementVector.add(new PVector(0, 5));
+  if (S && player.getPosition().y < 1000) {
+    movementVector.add(new PVector(0, 4));
   }
-  if (D) {
-    movementVector.add(new PVector(5, 0));
+  if (D && player.getPosition().x < 1000) {
+    movementVector.add(new PVector(4, 0));
   } 
   
   player.move(movementVector);
   movementVector = new PVector(0, 0);
+  
+  if (shoot) {
+    bullets.add(player.useWeapon(new PVector(mouseX, mouseY)));
+  }
+  
+  for (int i = 0; i < bullets.size(); i ++) {
+    float xpos = bullets.get(i).getPosition().x;
+    float ypos = bullets.get(i).getPosition().y;
+    if (xpos > 1000 || xpos < 0 || ypos > 1000 || ypos < 0) { 
+      Bullet b = bullets.get(i);
+      b = null;
+      //bullets.remove(i);
+    }
+    bullets.get(i).move();
+    bullets.get(i).displayBullet();
+  }
 }
 
 void keyPressed() {
@@ -86,4 +104,10 @@ void keyReleased() {
   if (key == 'd' || key == 'D') {
     D = false;
   }
+}
+void mousePressed() {
+  shoot = true;
+}
+void mouseReleased() {
+  shoot = false;
 }

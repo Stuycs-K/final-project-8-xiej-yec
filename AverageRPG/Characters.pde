@@ -25,10 +25,13 @@ public class Characters {
   public void takeDMG(int damage) {
     HP -= damage;
   }
-  public void useWeapon(Weapon weapon) {
-    
+  public Bullet useWeapon(PVector aimed) {
+    return weaponHolding.spawnBullet(position, aimed, 2.5);
   }
-  public void changePosition(PVector movement) {
+  public void move(PVector movement) {
     position.add(movement);
+  }
+  public PVector getPosition() {
+    return position;
   }
 }
