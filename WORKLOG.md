@@ -14,6 +14,12 @@ CLASSWORK: Add code that allows characters to be displayed onto the screen (to t
 
 HOMEWORK: Attempt to add movement functions (able to add UP/DOWN/LEFT/RIGHT movement, but troubled by diagonal movement)
 
+### 5/24/23
+
+CLASSWORK: Change movement functions to be smoother through the use of booleans for each important key (thanks Mr. K). Rest of class time spent figuring out how to git merge.
+
+HOMEWORK: Add shooting methods by having a method in Weapon spawn a bullet and a method in Bullet for moving. mousePressed() and mouseReleased() spawn the bullets and draw() moves them. Also limited the movement conditionals in draw() so that both player and bullet do not move offscreen. Also have a limiter in the Bullet class, though that limiter is unimportant.
+
 
 ## GROUP MEMBER 2 (Casey Ye)
 
