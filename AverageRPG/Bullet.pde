@@ -1,24 +1,24 @@
 public class Bullet{  
-  Pvector position, velocity
-  private Gun gun;
+  private PVector position, velocity;
+  private Weapon gun;
   private int dmg;
   private float radius;
   //private int accel;
   
   //add acceleration if there's time
-  public Bullet(float x, float y, float xSpeed, float ySpeed, Gun gun, float radius){
+  public Bullet(float x, float y, float xSpeed, float ySpeed, Weapon gun, float radius){
     position = new PVector(x, y);
     velocity = new PVector(xSpeed, ySpeed);
     this.gun = gun;
-    dmg = gun.getDmg;
+    dmg = gun.getDmg();
     this.radius = radius;
     //this.accel = accel;
   }
-  
+
   public void displayBullet() {
-    int x = position.x;
-    int y = position.y;
-    circle(x, y, raidus*2);
+    float x = position.x;
+    float y = position.y;
+    circle(x, y, radius*2);
   }
   
   
@@ -30,11 +30,21 @@ public class Bullet{
   //   return speed;
   // }
    
-   public void doDmg(Character char){
+   public void doDmg(Character chara){
      //check math for position
-     if (position.x >= char.position.x - radius || position.x <= char.position.x + radius) && (position.y >= char.position.y - radius || position.y <= char.position.y + radius){
-       char.getHp() -= dmg;
-     }
+     //if (position.x < chara.position.x - radius || position.x > chara.position.x + radius) && (position.y < chara.position.y - radius || position.y > chara.position.y + radius){
+     //  chara.getHp() - dmg;
+     //}
    }
    
+   
+   public void move() {
+     position.add(velocity);
+     if (position.x > 1000 || position.x < 0 || position.y > 1000 || position.y < 0) {
+       velocity = new PVector(0, 0);
+     }
+   }
+   public PVector getPosition() {
+     return position;
+   }
 }

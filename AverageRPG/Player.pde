@@ -1,10 +1,11 @@
-public class Player extends Character {
+import java.util.*;
+public class Player extends Characters {
   private int coins;
-  private ArrayList<Weapon> weapons;
+  //private ArrayList<Weapon> weapons;
   
-  public Player(ArrayList<Weapon> weapons_, PVector position_) {
-    super("Player", 20, 20, weapons_.get(0), position_, true);
+  public Player(Weapon weapon_, PVector position_) {
+    super("Player", 20, 20, weapon_, position_, true);
     coins = 0;
-    weapons = weapons_;
+    //weapons = weapons_;
   }
 }

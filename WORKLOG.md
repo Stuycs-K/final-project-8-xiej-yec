@@ -6,9 +6,19 @@
 
 CLASSWORK: Created Player branch in which Character class and Player class are located. Created constructors for Character superclass and Player subclass, but still need to create Enemy subclass.
 
-### date y
+HOMEWORK: Added classes for enemy and NPC characters. Also tweaked character parent class to include more functions and fixed constructor.
 
-info
+### 5/23/23
+
+CLASSWORK: Add code that allows characters to be displayed onto the screen (to test moving)
+
+HOMEWORK: Attempt to add movement functions (able to add UP/DOWN/LEFT/RIGHT movement, but troubled by diagonal movement)
+
+### 5/24/23
+
+CLASSWORK: Change movement functions to be smoother through the use of booleans for each important key (thanks Mr. K). Rest of class time spent figuring out how to git merge.
+
+HOMEWORK: Add shooting methods by having a method in Weapon spawn a bullet and a method in Bullet for moving. mousePressed() and mouseReleased() spawn the bullets and draw() moves them. Also limited the movement conditionals in draw() so that both player and bullet do not move offscreen. Also have a limiter in the Bullet class, though that limiter is unimportant.
 
 
 ## GROUP MEMBER 2 (Casey Ye)
@@ -21,6 +31,10 @@ and basic methods. These are still going to be updated as the game is developed.
 HOMEWORK: Add more methods to the Gun class and created Bullet class and constructor. Started drafting dialogue for the
 dialogue.
 
-### date y
+### 5/23/23
 
-info
+CLASSWORK: Add set and get methods for the speed in the Bullet class. Update bullet class to include associated Gun and amount
+of damage.
+
+HOMEWORK: Update Bullet class to include a doDmg method and updated how position and velocity (previously speed) is initialized.
+ALso updated character with the same PVector position issues and added getter methods that would be used in Bullet
