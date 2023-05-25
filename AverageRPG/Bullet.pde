@@ -1,5 +1,5 @@
 public class Bullet{  
-  Pvector position, velocity
+  PVector position, velocity;
   private Gun gun;
   private int dmg;
   private float radius;
@@ -10,15 +10,15 @@ public class Bullet{
     position = new PVector(x, y);
     velocity = new PVector(xSpeed, ySpeed);
     this.gun = gun;
-    dmg = gun.getDmg;
+    dmg = gun.getDmg();
     this.radius = radius;
     //this.accel = accel;
   }
 
   public void displayBullet() {
-    int x = position.x;
-    int y = position.y;
-    circle(x, y, raidus*2);
+    float x = position.x;
+    float y = position.y;
+    circle(x, y, radius*2);
   }
   
   
@@ -30,11 +30,11 @@ public class Bullet{
   //   return speed;
   // }
    
-   public void doDmg(Character char){
+   public void doDmg(Character chara){
      //check math for position
-     if (position.x < char.position.x - radius || position.x > char.position.x + radius) && (position.y < char.position.y - radius || position.y > char.position.y + radius){
-       char.getHp() - dmg;
-     }
+     //if (position.x < chara.position.x - radius || position.x > chara.position.x + radius) && (position.y < chara.position.y - radius || position.y > chara.position.y + radius){
+     //  chara.getHp() - dmg;
+     //}
    }
    
 }
