@@ -15,7 +15,10 @@ public class Gun extends Weapon{
    }
   }
   
-  //public void spawnBullet() {
+  //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+  //  PVector direction = PVector.sub(destination, origin);
+  //  direction.normalize();
+  //  return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
     
   //}
   

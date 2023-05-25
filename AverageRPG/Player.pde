@@ -8,8 +8,4 @@ public class Player extends Characters {
     coins = 0;
     //weapons = weapons_;
   }
-  
-  public void move(PVector movement) {
-    super.changePosition(movement);
-  }
 }
