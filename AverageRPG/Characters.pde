@@ -34,4 +34,12 @@ public class Characters {
   public PVector getPosition() {
     return position;
   }
+  
+  public int getX(){
+    return position.x;
+  }
+  
+    public int getY(){
+    return position.y;
+  }
 }

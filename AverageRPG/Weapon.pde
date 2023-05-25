@@ -22,7 +22,11 @@ public class Weapon{
   }
   
   public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+<<<<<<< HEAD
     float speed = 10; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
+=======
+    float speed = 7; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
+>>>>>>> Room
     
     PVector direction = PVector.sub(destination, origin);
     direction.normalize();
