@@ -40,9 +40,9 @@ public class Bullet{
    
    public void move() {
      position.add(velocity);
-     if (position.x > 1000 || position.x < 0 || position.y > 1000 || position.y < 0) {
-       velocity = new PVector(0, 0);
-     }
+     //if (position.x > 1000 || position.x < 0 || position.y > 1000 || position.y < 0) {
+     //  velocity = new PVector(0, 0);
+     //}
    }
    public PVector getPosition() {
      return position;
