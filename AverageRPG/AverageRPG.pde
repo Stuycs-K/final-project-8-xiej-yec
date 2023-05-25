@@ -3,7 +3,6 @@ import java.util.*;
 //weaponList.add(new Weapon("fist", 5, .1));
   
   
-
 Player player = new Player(new Gun("pistol", 5, .1, 10), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;

@@ -3,10 +3,9 @@ public class Weapon{
   private int dmg;
   private double rarity;
   
-  public Weapon(String name, int dmg, double rarity){
+  public Weapon(String name, int dmg){
     this.name = name;
     this.dmg = dmg;
-    this.rarity = rarity;
   }
   
   public int getDmg(){
