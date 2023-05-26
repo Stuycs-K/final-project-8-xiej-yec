@@ -42,4 +42,8 @@ public class Characters {
   public PVector getPosition() {
     return position;
   }
+  
+  public void setHP(int newHP){
+    HP = newHP;
+  }
 }
