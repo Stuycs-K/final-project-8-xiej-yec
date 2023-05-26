@@ -46,4 +46,8 @@ public class Characters {
   public void setHP(int newHP){
     HP = newHP;
   }
+  
+  public int getMaxHP(){
+    return maxHP;
+  }
 }
