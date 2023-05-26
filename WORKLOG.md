@@ -26,6 +26,7 @@ CLASSWORK: Attempted to incorporate inBounds method. gave the Room a color (to l
 
 HOMEWORK: Add an enemy to testing room. Purpose is to create and test a function that will check if a bullet overlaps with enemy or not. Next steps is to incorporate it into combatRoom and add friendly/enemy bullet indicator. Also added some small functions to room and player for quality of life (display room name, make enemy red, make hitbox variable). Ended up completely altering inBounds method.
 
+=======
 
 ## GROUP MEMBER 2 (Casey Ye)
 

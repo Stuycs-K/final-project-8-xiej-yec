@@ -9,7 +9,11 @@ public class CombatRoom extends Room{
       //enemies have infintite bulets
       Gun gun = new Gun("standard", 10, 1000000000);
       EnemyGrunt newEnemy = new EnemyGrunt("basic", 100, 100, gun, new PVector(50, 10 + i * 10));
-      newEnemey.display();
+
+      newEnemy.displayEnemy();
+      if (gun.getCurrentBulletCount() == 0){
+        gun.reload();
+      }
     }
   }
 }
