@@ -43,4 +43,4 @@ HOMEWORK: Finish up Room with inBound method (includes adding getter methods to 
 
 CLASSWORK: Add generateEnemies to Room and updated weapons class to remove rarity. Worked with Jason in class with the room design and boundaries on his computer.
 
-HOMEWORK:
+HOMEWORK: Finished up the combat room. Created the restore room and shop room, including the merchant NPC. Need to discuss how the layout of the shop is going to be
