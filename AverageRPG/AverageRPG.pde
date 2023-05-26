@@ -1,7 +1,7 @@
 import java.util.*;
 //ArrayList<Weapon> weaponList = new ArrayList<Weapon>();
 //weaponList.add(new Weapon("fist", 5, .1));
-  
+
   
 
 Player player = new Player(new Gun("pistol", 1, 10), new PVector(500, 500));
@@ -15,13 +15,13 @@ ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 ArrayList<EnemyGrunt> enemies = new ArrayList<EnemyGrunt>();
 Room room = new Room("test", new PVector(200, 200), 600, 600, color(255,182,193));
 int shootCooldown = 0;
+//int countdown;
 
 void setup() {
   size(1000, 1000);
   enemies.add(new EnemyGrunt("test", 20, 20, new Gun("standard", 10, 1000000000), new PVector(500, 500)));
+  //countdown = 0;
 }
-
-
 
 void draw() {
   background(0, 0, 0);
@@ -90,6 +90,20 @@ void draw() {
       i --;
     }
   }
+  
+  //when the timer is not 0
+  //draw reduces the timer
+  //if(countdown > 0){
+  //  countdown --;
+  //}
+
+  ////do different things based
+  ////on the timer
+  //if(countdown == 0){
+  //  shoot = false;
+  //}else{
+  //  shoot = true;
+  //}
 }
 
 void keyPressed() {
@@ -141,6 +155,10 @@ void keyReleased() {
 }
 void mousePressed() {
   shoot = true;
+  //if(countdown == 0){
+  //  //1 second timer
+  //  countdown+=1;
+  //}
 }
 void mouseReleased() {
   shoot = false;
