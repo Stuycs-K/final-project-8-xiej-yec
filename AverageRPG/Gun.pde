@@ -8,11 +8,12 @@ public class Gun extends Weapon{
     currentBulletCount = 0;
     this.totalBulletCount = totalBulletCount;
   }
-  
+
+  public int getCurrentBulletCount(){
+    return currentBulletCount;
+  }
   public void reload(){
-   if (totalBulletCount == 0){
      currentBulletCount = totalBulletCount;
-   }
   }
   
   //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
