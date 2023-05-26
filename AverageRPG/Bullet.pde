@@ -30,8 +30,12 @@ public class Bullet{
   //   return speed;
   // }
    
-   public void doDmg(Character chara){
+   public boolean doDmg(Characters chara){
      //check math for position
+     if (position.dist(chara.getPosition()) < chara.getHitbox()) { // 
+       return true;
+     }
+     return false;
      //if (position.x < chara.position.x - radius || position.x > chara.position.x + radius) && (position.y < chara.position.y - radius || position.y > chara.position.y + radius){
      //  chara.getHp() - dmg;
      //}

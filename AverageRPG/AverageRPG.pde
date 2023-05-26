@@ -3,7 +3,8 @@ import java.util.*;
 //weaponList.add(new Weapon("fist", 5, .1));
   
   
-Player player = new Player(new Gun("pistol", 5, .1, 10), new PVector(500, 500));
+
+Player player = new Player(new Gun("pistol", 5, 10), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
@@ -11,10 +12,12 @@ boolean S = false;
 boolean D = false;
 boolean shoot = false;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-Room room = new Room();
+ArrayList<EnemyGrunt> enemies = new ArrayList<EnemyGrunt>();
+Room room = new Room("test", new PVector(200, 200), 600, 600, color(255,182,193));
 
 void setup() {
   size(1000, 1000);
+  enemies.add(new EnemyGrunt("test", 20, 20, new Gun("standard", 10, 1000000000), new PVector(500, 500)));
 }
 
 
@@ -27,16 +30,16 @@ void draw() {
 
   text(key, 500, 500);
    
-  if (W & room.inBounds(player)) {
+  if (W & player.getYPos() > room.getUp()) {
     movementVector.add(new PVector(0, -4));
   }
-  if (A & room.inBounds(player)) {
+  if (A & player.getXPos() > room.getLeft()) {
     movementVector.add(new PVector(-4, 0));
   }
-  if (S & room.inBounds(player)) {
+  if (S & player.getYPos() < room.getDown()) {
     movementVector.add(new PVector(0, 4));
   }
-  if (D & room.inBounds(player)) {
+  if (D & player.getXPos() < room.getRight()) {
     movementVector.add(new PVector(4, 0));
   } 
   
@@ -48,15 +51,30 @@ void draw() {
   }
   
   for (int i = 0; i < bullets.size(); i ++) {
-    float xpos = bullets.get(i).getPosition().x;
-    float ypos = bullets.get(i).getPosition().y;
+    Bullet b = bullets.get(i);
+    float xpos = b.getPosition().x;
+    float ypos = b.getPosition().y;
     if (xpos > 1000 || xpos < 0 || ypos > 1000 || ypos < 0) { 
-      Bullet b = bullets.get(i);
-      b = null;
-      //bullets.remove(i);
+      //b = null;
+      bullets.remove(i);
+      i --;
     }
-    bullets.get(i).move();
-    bullets.get(i).displayBullet();
+    else {
+      bullets.get(i).move();
+      for (int j = 0; j < enemies.size(); j ++) {
+        if (b.doDmg(enemies.get(j))) {
+          bullets.remove(i);
+          i --;
+        }
+        else {
+          b.displayBullet();
+        }
+      }
+    }
+  }
+  
+  for (int i = 0; i < enemies.size(); i ++) {
+    enemies.get(i).displayEnemy();
   }
 }
 

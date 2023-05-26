@@ -13,6 +13,14 @@ public class Player extends Characters {
     float x = position.x;
     float y = position.y;
     fill(0,255,127);
-    rect(x - 10, y - 10, 20, 20);
+    rect(x - super.hitbox/2, y - super.hitbox/2, super.hitbox, super.hitbox);
+  }
+  
+  public float getXPos(){
+    return position.x;
+  }
+  
+  public float getYPos(){
+    return position.y;
   }
 }
