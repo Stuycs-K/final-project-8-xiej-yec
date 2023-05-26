@@ -38,3 +38,9 @@ Also updated character with the same PVector position issues and added getter me
 CLASSWORK: Add move() to Bullet and got started on a Room class
 
 HOMEWORK: Finish up Room with inBound method (includes adding getter methods to get position of character). Add a display for Enemy
+
+### 5/25/23
+
+CLASSWORK: Add generateEnemies to Room and updated weapons class to remove rarity. Worked with Jason in class with the room design and boundaries on his computer.
+
+HOMEWORK:
