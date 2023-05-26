@@ -3,8 +3,7 @@ import java.util.*;
 //weaponList.add(new Weapon("fist", 5, .1));
   
   
-
-Player player = new Player(new Gun("pistol", 5, 10), new PVector(100, 100));
+Player player = new Player(new Gun("pistol", 5, .1, 10), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
@@ -22,24 +21,24 @@ void setup() {
 
 void draw() {
   background(0, 0, 0);
+  room.displayRoom();
   player.displayCharacter();
+  
 
   text(key, 500, 500);
    
-  if (room.inBounds(player)) {
-    if (W) {
-      movementVector.add(new PVector(0, -4));
-    }
-    if (A) {
-      movementVector.add(new PVector(-4, 0));
-    }
-    if (S) {
-      movementVector.add(new PVector(0, 4));
-    }
-    if (D) {
-      movementVector.add(new PVector(4, 0));
-    } 
+  if (W & room.inBounds(player)) {
+    movementVector.add(new PVector(0, -4));
   }
+  if (A & room.inBounds(player)) {
+    movementVector.add(new PVector(-4, 0));
+  }
+  if (S & room.inBounds(player)) {
+    movementVector.add(new PVector(0, 4));
+  }
+  if (D & room.inBounds(player)) {
+    movementVector.add(new PVector(4, 0));
+  } 
   
   player.move(movementVector);
   movementVector = new PVector(0, 0);

@@ -8,4 +8,11 @@ public class Player extends Characters {
     coins = 0;
     //weapons = weapons_;
   }
+  
+  public void displayCharacter() { //include health bar and sprites
+    float x = position.x;
+    float y = position.y;
+    fill(0,255,127);
+    rect(x - 10, y - 10, 20, 20);
+  }
 }

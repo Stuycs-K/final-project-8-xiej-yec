@@ -12,6 +12,7 @@ public class Room{
   }   
   
   public void displayRoom() {
-    
+    fill(255,182,193);
+    rect(200, 200, 600, 600); //all of these should be parameters in the future
   }
 }
