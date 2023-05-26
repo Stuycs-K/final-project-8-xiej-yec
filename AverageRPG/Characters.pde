@@ -51,8 +51,15 @@ public class Characters {
   public int getMaxHP(){
     return maxHP;
   }
+  public int getHP(){
+    return HP;
+  }
   
   public int getHitbox(){
     return hitbox;
+  }
+  
+  public void decreaseHP(int damage){
+    HP -= damage;
   }
 }

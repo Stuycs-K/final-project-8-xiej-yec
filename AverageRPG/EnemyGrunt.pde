@@ -7,6 +7,7 @@ public class EnemyGrunt extends Characters {
     float x = position.x;
     float y = position.y;
     fill(255, 10, 10);
+    text("" + super.HP + "/" + super.maxHP, super.getXPos() - super.getHitbox() / 2, super.getYPos() - super.getHitbox());
     circle(x, y, super.hitbox);
   }
 }

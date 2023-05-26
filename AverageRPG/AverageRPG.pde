@@ -4,7 +4,7 @@ import java.util.*;
   
   
 
-Player player = new Player(new Gun("pistol", 5, 10), new PVector(500, 500));
+Player player = new Player(new Gun("pistol", 1, 10), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
@@ -14,6 +14,7 @@ boolean shoot = false;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 ArrayList<EnemyGrunt> enemies = new ArrayList<EnemyGrunt>();
 Room room = new Room("test", new PVector(200, 200), 600, 600, color(255,182,193));
+int shootCooldown = 0;
 
 void setup() {
   size(1000, 1000);
@@ -29,6 +30,8 @@ void draw() {
   
 
   text(key, 500, 500);
+  if (shoot)
+  text("SHOOT", 485, 400);
    
   if (W & player.getYPos() > room.getUp()) {
     movementVector.add(new PVector(0, -4));
@@ -46,8 +49,12 @@ void draw() {
   player.move(movementVector);
   movementVector = new PVector(0, 0);
   
-  if (shoot) {
+  if (shoot && shootCooldown == 10) {
+    shootCooldown = 0;
     bullets.add(player.useWeapon(new PVector(mouseX, mouseY)));
+  }
+  else if (shoot) {
+    shootCooldown += 1;
   }
   
   for (int i = 0; i < bullets.size(); i ++) {
@@ -66,15 +73,22 @@ void draw() {
           bullets.remove(i);
           i --;
         }
-        else {
-          b.displayBullet();
-        }
+        //else {
+        //  b.displayBullet();
+        //}
       }
+      b.displayBullet();
     }
   }
   
   for (int i = 0; i < enemies.size(); i ++) {
-    enemies.get(i).displayEnemy();
+    if (enemies.get(i).getHP() > 0) {
+      enemies.get(i).displayEnemy();
+    }
+    else {
+      enemies.remove(i);
+      i --;
+    }
   }
 }
 

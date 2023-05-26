@@ -33,6 +33,7 @@ public class Bullet{
    public boolean doDmg(Characters chara){
      //check math for position
      if (position.dist(chara.getPosition()) < chara.getHitbox()) { // 
+       chara.decreaseHP(dmg);
        return true;
      }
      return false;
