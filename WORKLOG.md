@@ -14,6 +14,18 @@ CLASSWORK: Add code that allows characters to be displayed onto the screen (to t
 
 HOMEWORK: Attempt to add movement functions (able to add UP/DOWN/LEFT/RIGHT movement, but troubled by diagonal movement)
 
+### 5/24/23
+
+CLASSWORK: Change movement functions to be smoother through the use of booleans for each important key (thanks Mr. K). Rest of class time spent figuring out how to git merge.
+
+HOMEWORK: Add shooting methods by having a method in Weapon spawn a bullet and a method in Bullet for moving. mousePressed() and mouseReleased() spawn the bullets and draw() moves them. Also limited the movement conditionals in draw() so that both player and bullet do not move offscreen. Also have a limiter in the Bullet class, though that limiter is unimportant.
+
+### 5/25/23
+
+CLASSWORK: Attempted to incorporate inBounds method. gave the Room a color (to later be used to differientiate different types of rooms). Rest of class period spent trying to merge.
+
+HOMEWORK: Add an enemy to testing room. Purpose is to create and test a function that will check if a bullet overlaps with enemy or not. Next steps is to incorporate it into combatRoom and add friendly/enemy bullet indicator. Also added some small functions to room and player for quality of life (display room name, make enemy red, make hitbox variable). Ended up completely altering inBounds method.
+
 
 ## GROUP MEMBER 2 (Casey Ye)
 
