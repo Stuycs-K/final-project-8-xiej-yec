@@ -49,12 +49,15 @@ void draw() {
   player.move(movementVector);
   movementVector = new PVector(0, 0);
   
-  if (shoot && shootCooldown == 10) {
+  if (shoot && shootCooldown >= 10) {
     shootCooldown = 0;
     bullets.add(player.useWeapon(new PVector(mouseX, mouseY)));
   }
   else if (shoot) {
-    shootCooldown += 1;
+    shootCooldown ++;
+  }
+  else {
+    shootCooldown ++;
   }
   
   for (int i = 0; i < bullets.size(); i ++) {

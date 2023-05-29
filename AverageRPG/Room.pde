@@ -1,5 +1,6 @@
 public class Room{
   private String name;
+
   private PVector leftCorner;
   private color fill;
   private float w, h;
@@ -21,6 +22,7 @@ public class Room{
   
   public boolean inBounds(Player player){
     //10 should be radius
+
     return (player.getXPos() + 10 < 1000 & player.getYPos() + 10 < 1000 & player.getXPos() - 10 > 0 & player.getYPos() - 10 > 0);
   }
   
@@ -43,4 +45,5 @@ public class Room{
     
     text(name, getRight() - 10, getUp() - 10);
   }
+
 }

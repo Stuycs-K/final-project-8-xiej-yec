@@ -44,6 +44,7 @@ public class Characters {
     return position;
   }
   
+
   public void setHP(int newHP){
     HP = newHP;
   }
@@ -62,4 +63,5 @@ public class Characters {
   public void decreaseHP(int damage){
     HP -= damage;
   }
+
 }
