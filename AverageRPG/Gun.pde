@@ -3,9 +3,9 @@ public class Gun extends Weapon{
   private int totalBulletCount;
 
   //TODO: Update when you make bullet
-  public Gun(String name, int dmg, int totalBulletCount){
-    super(name, dmg);
-    currentBulletCount = 0;
+  public Gun(String name, int dmg, int totalBulletCount, int speed){
+    super(name, dmg, speed);
+    currentBulletCount = totalBulletCount;
     this.totalBulletCount = totalBulletCount;
   }
 
@@ -13,7 +13,18 @@ public class Gun extends Weapon{
     return currentBulletCount;
   }
   public void reload(){
-     currentBulletCount = totalBulletCount;
+    AverageRPG.shootCooldown = -100;
+    currentBulletCount = totalBulletCount;
+  }
+  public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+    if (currentBulletCount == 0) {
+      reload();
+      //return null;
+    }
+    else if (currentBulletCount > 0) {
+      currentBulletCount --;
+    }
+    return super.spawnBullet(origin, destination, radius);
   }
   
   //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {

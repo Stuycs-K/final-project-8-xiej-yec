@@ -20,10 +20,8 @@ public class Room{
     h = 600;
   }
   
-  public boolean inBounds(Player player){
-    //10 should be radius
-
-    return (player.getXPos() + 10 < 1000 & player.getYPos() + 10 < 1000 & player.getXPos() - 10 > 0 & player.getYPos() - 10 > 0);
+  public boolean inBounds(Characters player){
+    return (player.getXPos() < getRight() & player.getYPos() < getDown() & player.getXPos() > getLeft() & player.getYPos() - 10 > getUp());
   }
   
   public float getLeft() {
@@ -43,7 +41,13 @@ public class Room{
     fill(fill);
     rect(leftCorner.x, leftCorner.y, w, h); //all of these should be parameters in the future
     
-    text(name, getRight() - 10, getUp() - 10);
+    text(name, getRight() - name.length() * 5, getUp() - 12);
+  }
+  
+  public boolean checkBulletCollision(Bullet bullet) {
+    return false;
+  }public boolean checkEnemyBulletCollision(Bullet bullet) {
+    return false;
   }
 
 }

@@ -17,7 +17,7 @@ public class Characters {
     isFriendly = isFriendly_;
   }
   
-  public void displayCharacter() { //include health bar and sprites
+  public void display() { //include health bar and sprites
     float x = position.x;
     float y = position.y;
     rect(x - hitbox/2, y - hitbox/2, hitbox, hitbox);
