@@ -6,6 +6,7 @@ public class Characters {
   private Weapon weaponHolding;
   PVector position;
   boolean isFriendly;
+  private int hitbox = 20;
   
   public Characters(String name_, int maxHP_, int HP_, Weapon weapon_, PVector position_, boolean isFriendly_) {
     name = name_;
@@ -19,7 +20,7 @@ public class Characters {
   public void displayCharacter() { //include health bar and sprites
     float x = position.x;
     float y = position.y;
-    rect(x - 10, y - 10, 20, 20);
+    rect(x - hitbox/2, y - hitbox/2, hitbox, hitbox);
   }
   
   public void takeDMG(int damage) {
@@ -31,15 +32,36 @@ public class Characters {
   public void move(PVector movement) {
     position.add(movement);
   }
+  
+  public float getXPos(){
+    return position.x;
+  }
+  
+  public float getYPos(){
+    return position.y;
+  }
   public PVector getPosition() {
     return position;
   }
   
-  public int getX(){
-    return position.x;
+
+  public void setHP(int newHP){
+    HP = newHP;
   }
   
-    public int getY(){
-    return position.y;
+  public int getMaxHP(){
+    return maxHP;
   }
+  public int getHP(){
+    return HP;
+  }
+  
+  public int getHitbox(){
+    return hitbox;
+  }
+  
+  public void decreaseHP(int damage){
+    HP -= damage;
+  }
+
 }
