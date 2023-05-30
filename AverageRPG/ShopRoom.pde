@@ -9,5 +9,4 @@ public class ShopRoom extends Room{
   
   //should it display the name of items as words
   //maybe when items are clicked, the details are displayed?
-
 }
