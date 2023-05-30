@@ -2,10 +2,12 @@ public class Weapon{
   private String name;
   private int dmg;
   private double rarity;
+  private int cost;
   
   public Weapon(String name, int dmg){
     this.name = name;
     this.dmg = dmg;
+    this.cost = cost;
   }
   
   public int getDmg(){
