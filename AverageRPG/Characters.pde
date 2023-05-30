@@ -63,5 +63,9 @@ public class Characters {
   public void decreaseHP(int damage){
     HP -= damage;
   }
+  
+  public boolean isDead(){
+    return (getHP() == 0);
+  }
 
 }
