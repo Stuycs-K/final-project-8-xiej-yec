@@ -20,6 +20,19 @@ CLASSWORK: Change movement functions to be smoother through the use of booleans 
 
 HOMEWORK: Add shooting methods by having a method in Weapon spawn a bullet and a method in Bullet for moving. mousePressed() and mouseReleased() spawn the bullets and draw() moves them. Also limited the movement conditionals in draw() so that both player and bullet do not move offscreen. Also have a limiter in the Bullet class, though that limiter is unimportant.
 
+### 5/25/23
+
+CLASSWORK: Attempted to incorporate inBounds method. gave the Room a color (to later be used to differientiate different types of rooms). Rest of class period spent trying to merge.
+
+HOMEWORK: Add an enemy to testing room. Purpose is to create and test a function that will check if a bullet overlaps with enemy or not. Next steps is to incorporate it into combatRoom and add friendly/enemy bullet indicator. Also added some small functions to room and player for quality of life (display room name, make enemy red, make hitbox variable). Ended up completely altering inBounds method.
+
+### 5/25/23
+
+CLASSWORK: Made a shoot countdown timer that would allow the player to hold down or tap the button to fire. Casey also made a timer, but we ended up using mine :) All my work was pushed onto the brank KCs-work.
+
+HOMEWORK: Added onto combatRoom so that combatRoom spawns a specified amount of enemies. combatRoom will display itself, its enemies, and an endscreen / door to the next room. It will also calculate enemy movement and bullet collision. ADDITIONALLY, players now have a reloading and bullet count mechanic, and will have their HP displayed. No penalties for hitting 0 HP (yet). Gun constructor now also has access to bullet speed and combatRoom color tweaked to be lighter for better text readability. Work was pushed onto the branch Game.
+
+=======
 
 ## GROUP MEMBER 2 (Casey Ye)
 
@@ -44,3 +57,15 @@ Also updated character with the same PVector position issues and added getter me
 CLASSWORK: Add move() to Bullet and got started on a Room class
 
 HOMEWORK: Finish up Room with inBound method (includes adding getter methods to get position of character). Add a display for Enemy
+
+### 5/25/23
+
+CLASSWORK: Add generateEnemies to Room and updated weapons class to remove rarity. Worked with Jason in class with the room design and boundaries on his computer.
+
+HOMEWORK: Finished up the combat room. Created the restore room and shop room, including the merchant NPC. Need to discuss how the layout of the shop is going to be
+
+### 5/26/23 + weekend
+
+CLASSWORK: Make timer variable and worked with Jason to fix it. Spent class time discussing how the shop is going to work and implementing the fire rate variable
+
+HOMEWORK: Change EnemyGrunt to Enemy in all classes. Create new instance variable for cost in Weapon. Create different types of Weapons for shop.
