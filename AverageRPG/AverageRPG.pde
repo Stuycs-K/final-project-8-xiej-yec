@@ -4,7 +4,7 @@ import java.util.*;
 
   
 
-Player player = new Player(new Gun("pistol", 2, 100, 10), new PVector(500, 500));
+Player player = new Player(new Gun("pistol", 2, 100, 10, 10), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
@@ -113,6 +113,7 @@ void draw() {
   //}else{
   //  shoot = true;
   //}
+  deathScreen();
 }
 
 void keyPressed() {
@@ -171,4 +172,12 @@ void mousePressed() {
 }
 void mouseReleased() {
   shoot = false;
+}
+
+void deathScreen(){
+  if (player.isDead()){
+      background(0, 0, 0);
+      fill(250);
+      text("GAME OVER", 500, 500);
+  }
 }
