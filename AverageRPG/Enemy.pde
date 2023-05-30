@@ -1,10 +1,10 @@
-public class EnemyGrunt extends Characters {
+public class Enemy extends Characters {
   int moveCooldownMax = (int)random(30, 55);
   int moveCooldown = 0;
   int shootCooldown = 0;
   PVector currentMovement = new PVector(random(-1, 1), random(-2, 2));
   
-  public EnemyGrunt(String name_, int maxHP_, int HP_, Weapon weapon, PVector position_) {
+  public Enemy(String name_, int maxHP_, int HP_, Weapon weapon, PVector position_) {
     super(name_, maxHP_, HP_, weapon, position_, false);
   }
   
