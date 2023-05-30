@@ -63,3 +63,9 @@ HOMEWORK: Finish up Room with inBound method (includes adding getter methods to 
 CLASSWORK: Add generateEnemies to Room and updated weapons class to remove rarity. Worked with Jason in class with the room design and boundaries on his computer.
 
 HOMEWORK: Finished up the combat room. Created the restore room and shop room, including the merchant NPC. Need to discuss how the layout of the shop is going to be
+
+### 5/26/23 + weekend
+
+CLASSWORK: Make timer variable and worked with Jason to fix it. Spent class time discussing how the shop is going to work and implementing the fire rate variable
+
+HOMEWORK: Change EnemyGrunt to Enemy in all classes. Create new instance variable for cost in Weapon. Create different types of Weapons for shop.
