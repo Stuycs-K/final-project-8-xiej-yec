@@ -3,7 +3,7 @@ public class Sword extends Weapon{
 
   //TODO: Might update rarity feature
   public Sword(String name, int dmg, int durability){
-    super(name, dmg);
+    super(name, dmg, 5);
     this.durability = durability;
   }
 }

@@ -1,11 +1,12 @@
 public class Weapon{
   private String name;
   private int dmg;
-  private double rarity;
+  private int speedBullets;
   
-  public Weapon(String name, int dmg){
+  public Weapon(String name, int dmg, int speed){
     this.name = name;
     this.dmg = dmg;
+    speedBullets = speed;
   }
   
   public int getDmg(){
@@ -21,7 +22,8 @@ public class Weapon{
   }
   
   public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
-    float speed = 10; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
+    float speed = speedBullets; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
+
     
     PVector direction = PVector.sub(destination, origin);
     direction.normalize();
