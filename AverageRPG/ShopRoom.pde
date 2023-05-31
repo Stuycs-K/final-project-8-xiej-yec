@@ -1,16 +1,13 @@
 public class ShopRoom extends Room{
-  private ArrayList<Weapon> items;
+  private ArrayList<Gun> items;
   
   public ShopRoom(){
     super.name =  "Shop Room";
-    String [] dialogue= new String[]{"What would you like to buy?"};
+    String [] dialogue= new String[]{"What would you like to buy?", 
+  "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", 
+  "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", 
+  "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. It doesn't even matter because it has a high fire rate!"};
     NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
-  }
-  
-  //should it display the name of items as words
-  //maybe when items are clicked, the details are displayed?
-  
- public void makeWeapons(){
    //cost depends on how many coins enemies drop
    
    //Standard Gun: does 3 dmg per bullet and has 50 bullets in a mag
@@ -24,5 +21,10 @@ public class ShopRoom extends Room{
    //Machine Gun: 2 dmg per bullet but has 200 bullets in a mag
    //high fire rate
    Gun machineGun = new Gun("Machine Gun", 2, 200, 100, 10, true);
- }
+   
+   items.add(standardGun);
+   items.add(goodGun);
+   items.add(machineGun);
+  }
+  
 }
