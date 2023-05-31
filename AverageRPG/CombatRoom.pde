@@ -1,11 +1,11 @@
 public class CombatRoom extends Room{
-  ArrayList<EnemyGrunt> enemies;
+  ArrayList<Enemy> enemies;
   boolean triangleDirection = true;
   float triangleOffset;
   
   public CombatRoom(int numberEnemies){
     super("Combat Room", new PVector(200, 200), 600, 600, color(216,191,216));
-    enemies = new ArrayList<EnemyGrunt>(numberEnemies);
+    enemies = new ArrayList<Enemy>(numberEnemies);
     generateEnemies(numberEnemies);
   }
   
@@ -13,8 +13,8 @@ public class CombatRoom extends Room{
     for (int i = 0 ; i < numOfEnemies; i++){
       //enemies have infintite bulets
       int HP = (int)random(5, 9) * 10;
-      Gun gun = new Gun("standard", 1, -1, 5);
-      enemies.add(new EnemyGrunt("basic", HP, HP, gun, new PVector(random(220, 780), random(220, 780))));
+      Gun gun = new Gun("standard", 1 ,10 , -1, 5, false);
+      enemies.add(new Enemy("basic", HP, HP, gun, new PVector(random(220, 780), random(220, 780))));
     }
   }
   
@@ -47,18 +47,19 @@ public class CombatRoom extends Room{
         fill(0);
         text("YOU SHOULD BE TELEPORTED INTO A NEW ROOM NOW BUT IM TOO LAZY TO CODE IT RN", 300, 500);
         noFill();
-      Gun gun = new Gun("standard", 10, 1000000000);
-      EnemyGrunt newEnemy = new EnemyGrunt("basic", 100, 100, gun, new PVector(50, 10 + i * 10));
+      //Gun gun = new Gun("standard", 10, 1000000000);
+      //Enemy newEnemy = new Enemy("basic", 100, 100, gun, new PVector(50, 10 + i * 10));
 
-      newEnemy.displayEnemy();
-      if (gun.getCurrentBulletCount() == 0){
-        gun.reload();
-      }
+      //newEnemy.displayEnemy();
+      //if (gun.getCurrentBulletCount() == 0){
+      //  gun.reload();
+      //}
     }
   }
-  public void enemyAction() {
+  }
+  public void enemyAction(){
     for (int i = 0 ; i < enemies.size(); i++){
-      EnemyGrunt e = enemies.get(i);
+      Enemy e = enemies.get(i);
       
       if (e.getHP() == 0) {
         enemies.remove(i);
@@ -78,7 +79,7 @@ public class CombatRoom extends Room{
     }
   }
   
-  public ArrayList<EnemyGrunt> getEnemies() {
+  public ArrayList<Enemy> getEnemies() {
     return enemies;
   }
   

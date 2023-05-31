@@ -13,7 +13,7 @@ public class Player extends Characters {
     Gun displayBullets = (Gun)(super.weaponHolding);
     float x = position.x;
     float y = position.y;
-    fill(0,255,127);
+    fill(0,255,127);  
     rect(x - super.hitbox/2, y - super.hitbox/2, super.hitbox, super.hitbox);
     text("" + super.HP + "/" + super.maxHP, super.getXPos() - super.getHitbox() / 2, super.getYPos() - super.getHitbox());
     if (shootCooldown >= 0) {

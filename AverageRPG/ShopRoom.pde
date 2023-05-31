@@ -15,14 +15,14 @@ public class ShopRoom extends Room{
    
    //Standard Gun: does 3 dmg per bullet and has 50 bullets in a mag
    //slow fire rate
-   Gun standardGun = new Gun("Standard Gun", 2, 50 , 20);
+   Gun standardGun = new Gun("Standard Gun", 2, 50 , 20, 1, true);
    
    //Good Gun: 10 dmg per bullet and has 50 bullets in a mag
    //med fire rate
-   Gun goodGun = new Gun("Good Gun", 10, 50, 50);
+   Gun goodGun = new Gun("Good Gun", 10, 50, 50, 5, true);
    
    //Machine Gun: 2 dmg per bullet but has 200 bullets in a mag
    //high fire rate
-   Gun machineGun = new Gun("Machine Gun", 2, 200, 100);
+   Gun machineGun = new Gun("Machine Gun", 2, 200, 100, 10, true);
  }
 }
