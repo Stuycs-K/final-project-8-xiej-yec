@@ -32,4 +32,7 @@ public class Player extends Characters {
   public float getYPos(){
     return position.y;
   }
+  public void setPosition(PVector newPos) {
+    super.position = newPos;
+  }
 }

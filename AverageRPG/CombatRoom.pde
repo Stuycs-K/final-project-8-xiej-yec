@@ -43,11 +43,9 @@ public class CombatRoom extends Room{
       }
       triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
       noFill();
-      if (player.getXPos() >= 790 & player.getYPos() >= 400 & player.getYPos() <= 600) {
-        fill(0);
-        text("YOU SHOULD BE TELEPORTED INTO A NEW ROOM NOW BUT IM TOO LAZY TO CODE IT RN", 300, 500);
-        noFill();
-      }
+      
+      nextRoom(790, 600, 400);
+      
     }
   }
   public void enemyAction(){
