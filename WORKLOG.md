@@ -26,7 +26,7 @@ CLASSWORK: Attempted to incorporate inBounds method. gave the Room a color (to l
 
 HOMEWORK: Add an enemy to testing room. Purpose is to create and test a function that will check if a bullet overlaps with enemy or not. Next steps is to incorporate it into combatRoom and add friendly/enemy bullet indicator. Also added some small functions to room and player for quality of life (display room name, make enemy red, make hitbox variable). Ended up completely altering inBounds method.
 
-### 5/25/23
+### 5/26/23
 
 CLASSWORK: Made a shoot countdown timer that would allow the player to hold down or tap the button to fire. Casey also made a timer, but we ended up using mine :) All my work was pushed onto the brank KCs-work.
 
