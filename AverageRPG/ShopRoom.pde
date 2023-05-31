@@ -7,10 +7,10 @@ public class ShopRoom extends Room{
   public ShopRoom(){
     super();
     super.name =  "Shop Room";    
-    String [] dialogue= new String[]{"What would you like to buy?", //0
-  "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", //1
-  "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", //2
-  "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. It doesn't even matter because it has a high fire rate!" //3
+    dialogue= new String[]{"What would you like to buy?", //0
+      "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", //1
+      "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", //2
+      "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!" //3
     };
     NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
    //cost depends on how many coins enemies drop
@@ -27,10 +27,14 @@ public class ShopRoom extends Room{
    //high fire rate
    Gun machineGun = new Gun("Machine Gun", 2, 200, 100, 10, true);
      
-   items = new ArrayList<Gun>();
+   items= new ArrayList<Gun>();
    items.add(standardGun);
    items.add(goodGun);
    items.add(machineGun);
+  }
+  
+  public void displayDialogue(String words){
+    text(words, 250, 700);
   }
   
   public String checkStandardStats(){
@@ -76,19 +80,19 @@ public class ShopRoom extends Room{
       //check right
       if (player.getYPos() >= 790 & player.getXPos() >= 250 & player.getXPos() <= 350) {
         fill(0);
-        text("TEST0", 300, 500);
+        displayDialogue(dialogue[1]);
       }
       
       //check middle
       if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
         fill(0);
-        text("TEST1", 300, 500);
+        displayDialogue(dialogue[2]);
       }
       
       //check left
       if (player.getYPos() >= 790 & player.getXPos() >= 650 & player.getXPos() <= 750) {
         fill(0);
-        text("TEST2", 300, 500);
+        displayDialogue(dialogue[3]);
       }
     }
   
