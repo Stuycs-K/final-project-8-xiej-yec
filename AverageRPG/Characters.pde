@@ -8,7 +8,7 @@ public class Characters {
   boolean isFriendly;
   private int hitbox = 20;
   
-  public Characters(String name_, int maxHP_, int HP_, Weapon weapon_, PVector position_, boolean isFriendly_) {
+  public Characters(String name_, int maxHP_, int HP_, Gun weapon_, PVector position_, boolean isFriendly_) {
     name = name_;
     maxHP = maxHP_;
     HP = HP_;

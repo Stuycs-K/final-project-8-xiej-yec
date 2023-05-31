@@ -3,7 +3,7 @@ public class Player extends Characters {
   private int coins;
   //private ArrayList<Weapon> weapons;
   
-  public Player(Weapon weapon_, PVector position_) {
+  public Player(Gun weapon_, PVector position_) {
     super("Player", 100, 100, weapon_, position_, true);
     coins = 0;
     //weapons = weapons_;
