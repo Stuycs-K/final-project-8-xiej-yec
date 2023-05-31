@@ -47,7 +47,10 @@ public class ShopRoom extends Room{
   
   public void displayItems(){
       fill(0,255,0);
+      rect(250, 800, 100, 5);
       rect(450, 800, 100, 5);
+      rect(650, 800, 100, 5);
+      
       if (triangleOffset + 830 >= 840) {
         triangleDirection = false;
       }
@@ -60,12 +63,32 @@ public class ShopRoom extends Room{
       else {
         triangleOffset -= .5;
       }
-      triangle(500 , 850 + triangleOffset, 450, 900 + triangleOffset, 550, 900 + triangleOffset);
-      noFill();
+      
+      //right triangle
+      triangle(300 , 850 + triangleOffset, 250, 900 + triangleOffset, 350, 900 + triangleOffset);
+      
+      // middle triangle
+      triangle(500, 850 + triangleOffset, 450, 900 + triangleOffset, 550, 900 + triangleOffset);
+      
+      // left triangle
+      triangle(700, 850 + triangleOffset, 650, 900 + triangleOffset, 750, 900 + triangleOffset);
+      
+      //check right
+      if (player.getYPos() >= 790 & player.getXPos() >= 250 & player.getXPos() <= 350) {
+        fill(0);
+        text("TEST0", 300, 500);
+      }
+      
+      //check middle
       if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
         fill(0);
-        text("TEST", 300, 500);
-        noFill();
+        text("TEST1", 300, 500);
+      }
+      
+      //check left
+      if (player.getYPos() >= 790 & player.getXPos() >= 650 & player.getXPos() <= 750) {
+        fill(0);
+        text("TEST2", 300, 500);
       }
     }
   
