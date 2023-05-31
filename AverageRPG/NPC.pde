@@ -6,7 +6,7 @@ public class NPC extends Characters {
     dialogue = dialogueTree_;
   }
   
-  void talk(Player player) { // display an element from dialogue when player is nearby
+  //void talk(Player player) { // display an element from dialogue when player is nearby
     
-  }
+  //}
 }
