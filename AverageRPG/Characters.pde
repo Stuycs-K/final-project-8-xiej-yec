@@ -6,7 +6,7 @@ public class Characters {
   private Gun weaponHolding;
   PVector position;
   boolean isFriendly;
-  private int hitbox = 20;
+  private int hitbox = 30;
   
   public Characters(String name_, int maxHP_, int HP_, Gun weapon_, PVector position_, boolean isFriendly_) {
     name = name_;
@@ -27,7 +27,7 @@ public class Characters {
     HP -= damage;
   }
   public Bullet useWeapon(PVector aimed) {
-    return weaponHolding.spawnBullet(position, aimed, 2.5);
+    return weaponHolding.spawnBullet(position, aimed, 5);
   }
   public void move(PVector movement) {
     position.add(movement);
