@@ -1,9 +1,12 @@
 public class ShopRoom extends Room{
   private ArrayList<Gun> items;
   private String[] dialogue;
+  float triangleOffset;
+  boolean triangleDirection = true;
   
   public ShopRoom(){
-    super.name =  "Shop Room";
+    super();
+    super.name =  "Shop Room";    
     String [] dialogue= new String[]{"What would you like to buy?", //0
   "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", //1
   "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", //2
@@ -23,7 +26,8 @@ public class ShopRoom extends Room{
    //Machine Gun: 2 dmg per bullet but has 200 bullets in a mag
    //high fire rate
    Gun machineGun = new Gun("Machine Gun", 2, 200, 100, 10, true);
-   
+     
+   items = new ArrayList<Gun>();
    items.add(standardGun);
    items.add(goodGun);
    items.add(machineGun);
@@ -40,4 +44,32 @@ public class ShopRoom extends Room{
   public String checkMachineStats(){
     return dialogue[3];
   }
+  
+  public void displayItems(){
+      fill(0,255,0);
+      rect(450, 800, 100, 5);
+      if (triangleOffset + 830 >= 840) {
+        triangleDirection = false;
+      }
+      else if (triangleOffset + 830 <= 820) {
+        triangleDirection = true;
+      }
+      if (triangleDirection) {
+        triangleOffset += .5;
+      }
+      else {
+        triangleOffset -= .5;
+      }
+      triangle(500 , 850 + triangleOffset, 450, 900 + triangleOffset, 550, 900 + triangleOffset);
+      noFill();
+      if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
+        fill(0);
+        text("TEST", 300, 500);
+        noFill();
+      }
+    }
+  
+  
+  
+  
 }
