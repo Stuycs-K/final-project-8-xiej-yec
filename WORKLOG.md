@@ -32,6 +32,13 @@ CLASSWORK: Made a shoot countdown timer that would allow the player to hold down
 
 HOMEWORK: Added onto combatRoom so that combatRoom spawns a specified amount of enemies. combatRoom will display itself, its enemies, and an endscreen / door to the next room. It will also calculate enemy movement and bullet collision. ADDITIONALLY, players now have a reloading and bullet count mechanic, and will have their HP displayed. No penalties for hitting 0 HP (yet). Gun constructor now also has access to bullet speed and combatRoom color tweaked to be lighter for better text readability. Work was pushed onto the branch Game.
 
+### 5/27/23
+
+CLASSWORK: Excused Absence
+
+HOMEWORK: Cost variable was added to enemy which caused them to no longer have -1 bullets and be able to reload. Had to fix this because I originally did not intend for enemies to reload their ammo and therefore the reloading is connected to the shooting cooldown of the player and not whoever spawns the bullet (enemies may be able to reload if shooting cooldown is made a characters variable?)
+
+
 =======
 
 ## GROUP MEMBER 2 (Casey Ye)
