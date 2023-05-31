@@ -69,3 +69,10 @@ HOMEWORK: Finished up the combat room. Created the restore room and shop room, i
 CLASSWORK: Make timer variable and worked with Jason to fix it. Spent class time discussing how the shop is going to work and implementing the fire rate variable
 
 HOMEWORK: Change EnemyGrunt to Enemy in all classes. Create new instance variable for cost in Weapon. Create different types of Weapons for shop.
+
+
+### 5/27/23
+
+CLASSWORK: Worked on fixing merge conflicts between my branch and Jason's branch. Started to try to change the color of the fired bullets. Also add a game over scene
+
+HOMEWORK: Finish up coloring bullets by making a isFriendly pararameter. Doesn't quite work yet so I'm going to keep working on it. Decided on getting right of having swords as a weapon. Combined the Weapon class with the Gun class. 
