@@ -24,8 +24,9 @@ public class Bullet{
     if (gun.getIsFriendly()){
       fill(0,255,127); 
     } else {
-      fill(0,255,0); 
+      fill(255,0,0); 
     }
+    noFill();
   }
   
   

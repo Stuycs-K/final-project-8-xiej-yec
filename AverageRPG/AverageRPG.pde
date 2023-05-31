@@ -4,7 +4,7 @@ import java.util.*;
 
   
 
-Player player = new Player(new Gun("pistol", 2, 100, 10, 10, true), new PVector(500, 500));
+Player player = new Player(new Gun("pistol", 2, 10, 10, 10, true), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
@@ -27,6 +27,8 @@ void draw() {
   background(0, 0, 0);
   room.displayRoom();
   player.display();
+  text(player.getGun().getCurrentBulletCount(), 500, 500);
+  text(shootCooldown, 500, 400);
   
    
   if (W & player.getYPos() > room.getUp()) {
@@ -45,11 +47,10 @@ void draw() {
   player.move(movementVector);
   movementVector = new PVector(0, 0);
   
-  if (shoot && shootCooldown >= 10) {
+  if (shoot & shootCooldown > 10) {
     shootCooldown = 0;
     playerBullets.add(player.useWeapon(new PVector(mouseX, mouseY)));
-  }
-  else {
+  }else {
     shootCooldown ++;
   }
   

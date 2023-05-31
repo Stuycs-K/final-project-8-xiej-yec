@@ -10,11 +10,12 @@ public class Player extends Characters {
   }
   
   public void display() { //include health bar and sprites
-    Gun displayBullets = (Gun)(super.weaponHolding);
+    Gun displayBullets = super.weaponHolding;
     float x = position.x;
     float y = position.y;
-    fill(0,255,127);  
+    fill(102,178,255);  
     rect(x - super.hitbox/2, y - super.hitbox/2, super.hitbox, super.hitbox);
+    noFill();
     text("" + super.HP + "/" + super.maxHP, super.getXPos() - super.getHitbox() / 2, super.getYPos() - super.getHitbox());
     if (shootCooldown >= 0) {
       text("" + displayBullets.getCurrentBulletCount(), super.getXPos() - super.getHitbox() / 2, super.getYPos() + super.getHitbox());

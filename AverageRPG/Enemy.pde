@@ -1,8 +1,8 @@
 public class Enemy extends Characters {
-  int moveCooldownMax = (int)random(30, 55);
-  int moveCooldown = 0;
-  int shootCooldown = 0;
-  PVector currentMovement = new PVector(random(-1, 1), random(-2, 2));
+  private int moveCooldownMax = (int)random(30, 55);
+  private int moveCooldown = 0;
+  private int shootCooldown = 0;
+  private PVector currentMovement = new PVector(random(-1, 1), random(-2, 2));
   
   public Enemy(String name_, int maxHP_, int HP_, Gun weapon, PVector position_) {
     super(name_, maxHP_, HP_, weapon, position_, false);
@@ -23,12 +23,12 @@ public class Enemy extends Characters {
   }
   
   public boolean canShoot() {
-    if (shootCooldown >= 80) {
-      shootCooldown = 0;
+    if (this.shootCooldown >= 80) {
+      this.shootCooldown = 0;
       return true;
     }
     else {
-      shootCooldown += random(4);
+      this.shootCooldown += random(4);
     }
     return false;
   }

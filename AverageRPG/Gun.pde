@@ -41,6 +41,13 @@ public class Gun{
   }
   
   public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+    if (currentBulletCount > 0) {
+      currentBulletCount --;
+    }
+    if (currentBulletCount == 0) {
+      reload();
+    }
+    
     float speed = speedBullets; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
 
     
@@ -51,6 +58,9 @@ public class Gun{
     
     return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
     
+  }
+  public String toString() {
+    return name;
   }
   
   //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {

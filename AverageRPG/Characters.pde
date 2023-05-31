@@ -67,5 +67,9 @@ public class Characters {
   public boolean isDead(){
     return (getHP() == 0);
   }
+  
+  public Gun getGun() {
+    return weaponHolding;
+  }
 
 }
