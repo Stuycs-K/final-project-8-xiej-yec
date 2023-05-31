@@ -3,7 +3,6 @@ public class Bullet{
   private Gun gun;
   private int dmg;
   private float radius;
-  private boolean isFriendly;
   //private int accel;
   
   //add acceleration if there's time
@@ -19,13 +18,14 @@ public class Bullet{
   public void displayBullet() {
     float x = position.x;
     float y = position.y;
-    circle(x, y, radius*2);
-    //trying to change the color depending on if it's a friendly bullet or not
     if (gun.getIsFriendly()){
-      fill(0,255,127); 
+      fill(102,178,255); 
     } else {
       fill(255,0,0); 
     }
+    
+    circle(x, y, radius*2);
+    //trying to change the color depending on if it's a friendly bullet or not
     noFill();
   }
   

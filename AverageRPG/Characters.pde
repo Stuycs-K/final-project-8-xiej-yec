@@ -6,7 +6,7 @@ public class Characters {
   private Gun weaponHolding;
   PVector position;
   boolean isFriendly;
-  private int hitbox = 20;
+  private int hitbox = 30;
   
   public Characters(String name_, int maxHP_, int HP_, Gun weapon_, PVector position_, boolean isFriendly_) {
     name = name_;

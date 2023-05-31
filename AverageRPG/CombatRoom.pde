@@ -47,15 +47,8 @@ public class CombatRoom extends Room{
         fill(0);
         text("YOU SHOULD BE TELEPORTED INTO A NEW ROOM NOW BUT IM TOO LAZY TO CODE IT RN", 300, 500);
         noFill();
-      //Gun gun = new Gun("standard", 10, 1000000000);
-      //Enemy newEnemy = new Enemy("basic", 100, 100, gun, new PVector(50, 10 + i * 10));
-
-      //newEnemy.displayEnemy();
-      //if (gun.getCurrentBulletCount() == 0){
-      //  gun.reload();
-      //}
+      }
     }
-  }
   }
   public void enemyAction(){
     for (int i = 0 ; i < enemies.size(); i++){

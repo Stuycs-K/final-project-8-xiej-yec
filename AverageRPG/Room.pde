@@ -42,6 +42,8 @@ public class Room{
     rect(leftCorner.x, leftCorner.y, w, h); //all of these should be parameters in the future
     
     text(name, getRight() - name.length() * 5, getUp() - 12);
+    
+    noFill();
   }
   
   public boolean checkBulletCollision(Bullet bullet) {
