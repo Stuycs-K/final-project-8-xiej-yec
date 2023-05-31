@@ -179,6 +179,7 @@ void deathScreen(){
   if (player.isDead()){
       background(0, 0, 0);
       fill(250);
-      text("GAME OVER", 500, 500);
+      textSize(100);
+      text("GAME OVER", 400, 500);
   }
 }

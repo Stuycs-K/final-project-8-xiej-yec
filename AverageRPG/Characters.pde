@@ -27,7 +27,7 @@ public class Characters {
     HP -= damage;
   }
   public Bullet useWeapon(PVector aimed) {
-    return weaponHolding.spawnBullet(position, aimed, 2.5);
+    return weaponHolding.spawnBullet(position, aimed, 5);
   }
   public void move(PVector movement) {
     position.add(movement);
@@ -65,7 +65,7 @@ public class Characters {
   }
   
   public boolean isDead(){
-    return (getHP() == 0);
+    return (getHP() <= 0);
   }
   
   public Gun getGun() {
