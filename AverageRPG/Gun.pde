@@ -36,33 +36,33 @@ public class Gun{
     return name;
   }
   
-  public int doDmg(Character charHP, Weapon weapon){
+  public int doDmg(Character charHP, Gun weapon){
     return charHP - weapon.getDmg();
   }
   
-  //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
-  //  float speed = speedBullets; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
+  public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+    float speed = speedBullets; //SPEED OF BULLET, I SHOULD PROBABLY MAKE THIS AN INSTANCE VARIABLE FOR BULLET CLASS
 
     
-  //  PVector direction = PVector.sub(destination, origin);
-  //  direction.normalize();
+    PVector direction = PVector.sub(destination, origin);
+    direction.normalize();
     
-  //  direction.mult(speed);
+    direction.mult(speed);
     
-  //  return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
+    return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
     
-  //}
-  
-  public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
-    if (currentBulletCount == 0) {
-      reload();
-      //return null;
-    }
-    else if (currentBulletCount > 0) {
-      currentBulletCount --;
-    }
-    return spawnBullet(origin, destination, radius);
   }
+  
+  //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
+  //  if (currentBulletCount == 0) {
+  //    reload();
+  //    //return null;
+  //  }
+  //  else if (currentBulletCount > 0) {
+  //    currentBulletCount --;
+  //  }
+  //  return spawnBullet(origin, destination, radius);
+  //}
   
   //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
   //  PVector direction = PVector.sub(destination, origin);
