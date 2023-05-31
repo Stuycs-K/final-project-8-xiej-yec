@@ -75,4 +75,4 @@ HOMEWORK: Change EnemyGrunt to Enemy in all classes. Create new instance variabl
 
 CLASSWORK: Worked on fixing merge conflicts between my branch and Jason's branch. Started to try to change the color of the fired bullets. Also add a game over scene
 
-HOMEWORK: Finish up coloring bullets by making a isFriendly pararameter. Doesn't quite work yet so I'm going to keep working on it. Decided on getting right of having swords as a weapon. Combined the Weapon class with the Gun class. 
+HOMEWORK: Finish up coloring bullets by making a isFriendly pararameter. Doesn't quite work yet so I'm going to keep working on it. Decided on getting right of having swords as a weapon. Combined the Weapon class with the Gun class. Updated weapons in ShopRoom and respective displayed descriptions
