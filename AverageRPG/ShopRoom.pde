@@ -1,12 +1,14 @@
 public class ShopRoom extends Room{
   private ArrayList<Gun> items;
+  private String[] dialogue;
   
   public ShopRoom(){
     super.name =  "Shop Room";
-    String [] dialogue= new String[]{"What would you like to buy?", 
-  "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", 
-  "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", 
-  "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. It doesn't even matter because it has a high fire rate!"};
+    String [] dialogue= new String[]{"What would you like to buy?", //0
+  "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", //1
+  "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", //2
+  "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. It doesn't even matter because it has a high fire rate!" //3
+    };
     NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
    //cost depends on how many coins enemies drop
    
@@ -27,4 +29,15 @@ public class ShopRoom extends Room{
    items.add(machineGun);
   }
   
+  public String checkStandardStats(){
+    return dialogue[1];
+  }
+  
+  public String checkGoodStats(){
+    return dialogue[2];
+  }
+  
+  public String checkMachineStats(){
+    return dialogue[3];
+  }
 }
