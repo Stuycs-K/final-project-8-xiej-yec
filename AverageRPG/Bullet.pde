@@ -1,12 +1,13 @@
 public class Bullet{  
   private PVector position, velocity;
-  private Weapon gun;
+  private Gun gun;
   private int dmg;
   private float radius;
+  private boolean isFriendly;
   //private int accel;
   
   //add acceleration if there's time
-  public Bullet(float x, float y, float xSpeed, float ySpeed, Weapon gun, float radius){
+  public Bullet(float x, float y, float xSpeed, float ySpeed, Gun gun, float radius){
     position = new PVector(x, y);
     velocity = new PVector(xSpeed, ySpeed);
     this.gun = gun;
@@ -19,6 +20,12 @@ public class Bullet{
     float x = position.x;
     float y = position.y;
     circle(x, y, radius*2);
+    //trying to change the color depending on if it's a friendly bullet or not
+    if (gun.getIsFriendly()){
+      fill(0,255,127); 
+    } else {
+      fill(0,255,0); 
+    }
   }
   
   
