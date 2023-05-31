@@ -3,7 +3,7 @@ public class Characters {
   private String name;
   private int maxHP;
   private int HP;
-  private Weapon weaponHolding;
+  private Gun weaponHolding;
   PVector position;
   boolean isFriendly;
   private int hitbox = 20;
