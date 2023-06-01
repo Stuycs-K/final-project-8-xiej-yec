@@ -14,7 +14,7 @@ boolean shoot = false;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 //ArrayList<EnemyGrunt> enemies = new ArrayList<EnemyGrunt>();
-Room room = new CombatRoom(5);
+ShopRoom room = new ShopRoom();
 static int shootCooldown = 0;
 //int countdown;
 
@@ -26,6 +26,7 @@ void setup() {
 void draw() {
   background(0, 0, 0);
   room.displayRoom();
+  room.displayItems();
   player.display();
   text(player.getGun().getCurrentBulletCount(), 500, 500);
   text(shootCooldown, 500, 400);
