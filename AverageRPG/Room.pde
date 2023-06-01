@@ -46,6 +46,14 @@ public class Room{
     noFill();
   }
   
+  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot) {
+    if (player.getXPos() >= xCoord & player.getYPos() >= yCoordBot & player.getYPos() <= yCoordTop) {
+      Room nextRoom = new CombatRoom((int)(random(2, 5)));
+      player.setPosition(new PVector(nextRoom.getLeft() + player.getHitbox(), nextRoom.getUp() + h / 2));
+      room = nextRoom;
+    }
+  }
+  
   public boolean checkBulletCollision(Bullet bullet) {
     return false;
   }public boolean checkEnemyBulletCollision(Bullet bullet) {
