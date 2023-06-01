@@ -30,10 +30,18 @@ void draw() {
   player.display();
   
   fill(255, 255, 100);
-  rect(200, 50, 100, 100);
+  rect(50, 200, 100, 100);
+  rect(50, 300, 100, 100);
+  rect(50, 400, 100, 100);
   
   fill(255, 255, 0);
-  //textSize("YOUR COINS: " + 
+  textSize(100);
+  text("YOUR COINS: " + player.getCoins(), 200, 150);
+  textSize(12);
+  fill(0);
+  text("PRESS TO\nCLEAR ENEMIES\n(COMBAT ROOM)", 60, 220);
+  text("PRESS TO\nFILL HP", 60, 320);
+  text("PRESS TO\nADD 100 COINS", 60, 420);
   
    
   if (W & player.getYPos() > room.getUp()) {
@@ -172,11 +180,20 @@ void keyReleased() {
 void mousePressed() {
   shoot = true;
   
-  if (mouseX >= 200 & mouseX <= 300 & mouseY >= 50 & mouseY <= 150) {
+  if (mouseX >= 50 & mouseX <= 150 & mouseY > 200 & mouseY <= 300) {
     if (room instanceof CombatRoom) {
       CombatRoom clear = (CombatRoom)room;
       clear.complete();
     }
+    shoot = false;
+  }
+  if (mouseX >= 50 & mouseX <= 150 & mouseY > 300 & mouseY <= 400) {
+    player.setHP(player.getMaxHP());
+    shoot = false;
+  }
+  if (mouseX >= 50 & mouseX <= 150 & mouseY > 400 & mouseY <= 500) {
+    player.addCoins(100);
+    shoot = false;
   }
 }
 void mouseReleased() {

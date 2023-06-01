@@ -35,7 +35,11 @@ public class Player extends Characters {
   public void setPosition(PVector newPos) {
     super.position = newPos;
   }
+  
   public int getCoins() {
     return coins;
+  }
+  public void addCoins(int add) {
+    coins += add;
   }
 }

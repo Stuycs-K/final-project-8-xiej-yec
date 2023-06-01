@@ -8,9 +8,9 @@ public class ShopRoom extends Room{
     super();
     super.name =  "Shop Room";    
     dialogue= new String[]{"What would you like to buy?", //0
-      "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate", //1
-      "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate", //2
-      "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!" //3
+      "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20", //1
+      "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50", //2
+      "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!\nCOST: 100" //3
     };
     NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
    //cost depends on how many coins enemies drop
@@ -79,9 +79,9 @@ public class ShopRoom extends Room{
       rect(450, 800, 100, 25);
       rect(650, 800, 100, 25);
       fill(0);
-      text("INFO", 285, 815);
-      text("INFO", 485, 815);
-      text("INFO", 685, 815);
+      text("Standard Gun", 260, 815);
+      text("Good Gun", 465, 815);
+      text("Machine Gun", 660, 815);
       
       if (triangleOffset + 830 >= 840) {
         triangleDirection = false;
