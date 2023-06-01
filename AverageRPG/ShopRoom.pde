@@ -33,6 +33,30 @@ public class ShopRoom extends Room{
    items.add(machineGun);
   }
   
+  public void displayRoom() {
+    super.displayRoom();
+    displayItems();
+    
+    fill(0,255,0);
+    rect(800, 400, 5, 200);
+    if (triangleOffset + 830 >= 840) {
+      triangleDirection = false;
+    }
+    else if (triangleOffset + 830 <= 820) {
+      triangleDirection = true;
+    }
+    if (triangleDirection) {
+      triangleOffset += .5;
+    }
+    else {
+      triangleOffset -= .5;
+    }
+    triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
+    noFill();
+    
+    nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
+  }
+  
   public void displayDialogue(String words){
     text(words, 250, 700);
   }
@@ -50,10 +74,14 @@ public class ShopRoom extends Room{
   }
   
   public void displayItems(){
-      fill(0,255,0);
-      rect(250, 800, 100, 5);
-      rect(450, 800, 100, 5);
-      rect(650, 800, 100, 5);
+      fill(255,255,0);
+      rect(250, 800, 100, 25);
+      rect(450, 800, 100, 25);
+      rect(650, 800, 100, 25);
+      fill(0);
+      text("INFO", 285, 815);
+      text("INFO", 485, 815);
+      text("INFO", 685, 815);
       
       if (triangleOffset + 830 >= 840) {
         triangleDirection = false;

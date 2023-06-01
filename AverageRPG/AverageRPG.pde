@@ -14,7 +14,7 @@ boolean shoot = false;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
-ShopRoom room = new ShopRoom();
+Room room = new ShopRoom();
 
 static int shootCooldown = 0;
 //int countdown;
@@ -27,8 +27,13 @@ void setup() {
 void draw() {
   background(0, 0, 0);
   room.displayRoom();
-  room.displayItems();
   player.display();
+  
+  fill(255, 255, 100);
+  rect(200, 50, 100, 100);
+  
+  fill(255, 255, 0);
+  //textSize("YOUR COINS: " + 
   
    
   if (W & player.getYPos() > room.getUp()) {
@@ -166,10 +171,13 @@ void keyReleased() {
 }
 void mousePressed() {
   shoot = true;
-  //if(countdown == 0){
-  //  //1 second timer
-  //  countdown+=1;
-  //}
+  
+  if (mouseX >= 200 & mouseX <= 300 & mouseY >= 50 & mouseY <= 150) {
+    if (room instanceof CombatRoom) {
+      CombatRoom clear = (CombatRoom)room;
+      clear.complete();
+    }
+  }
 }
 void mouseReleased() {
   shoot = false;

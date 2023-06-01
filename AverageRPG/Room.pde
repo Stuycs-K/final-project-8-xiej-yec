@@ -46,11 +46,10 @@ public class Room{
     noFill();
   }
   
-  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot) {
+  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, Room nextInQueue) {
     if (player.getXPos() >= xCoord & player.getYPos() >= yCoordBot & player.getYPos() <= yCoordTop) {
-      Room nextRoom = new CombatRoom((int)(random(2, 5)));
-      player.setPosition(new PVector(nextRoom.getLeft() + player.getHitbox(), nextRoom.getUp() + h / 2));
-      room = nextRoom;
+      player.setPosition(new PVector(nextInQueue.getLeft() + player.getHitbox(), nextInQueue.getUp() + h / 2));
+      room = nextInQueue;
     }
   }
   
