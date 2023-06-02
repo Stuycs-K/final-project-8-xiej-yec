@@ -38,7 +38,7 @@ CLASSWORK: Excused Absence
 
 HOMEWORK: Cost variable was added to enemy which caused them to no longer have -1 bullets and be able to reload. Had to fix this because I originally did not intend for enemies to reload their ammo and therefore the reloading is connected to the shooting cooldown of the player and not whoever spawns the bullet (enemies may be able to reload if shooting cooldown is made a characters variable?)
 
-### 5/30/23
+### 5/31/23
 
 CLASSWORK: Added doorway system in which players are directed to walk into a green door to progress through different rooms (currently only combat rooms)
 
