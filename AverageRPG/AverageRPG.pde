@@ -31,6 +31,9 @@ void draw() {
   room.displayRoom();
   player.display();
   
+  fill(255, 0, 0);
+  circle(mouseX, mouseY, 5);
+  
   fill(255, 255, 100);
   rect(50, 200, 100, 100);
   rect(50, 300, 100, 100);
