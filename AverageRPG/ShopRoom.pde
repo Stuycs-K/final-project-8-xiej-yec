@@ -3,7 +3,7 @@ public class ShopRoom extends Room{
   private String[] dialogue;
   float triangleOffset;
   boolean triangleDirection = true;
-  int buyCooldown = 0;
+  boolean buyToggle = true;
   
   public ShopRoom(){
     super();
@@ -75,7 +75,6 @@ public class ShopRoom extends Room{
   }
   
   public void displayItems(){
-    buyCooldown ++;
       fill(255,255,0);
       rect(250, 800, 100, 25);
       rect(450, 800, 100, 25);
@@ -112,37 +111,40 @@ public class ShopRoom extends Room{
         fill(0);
         displayDialogue(dialogue[1]);
         
-        if ((key == 'e' || key == 'E') & player.getCoins() >= 20 & buyCooldown > 50) {
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 20 & buyToggle) {
           player.setGun(items.get(0));
           player.addCoins(-20);
-          buyCooldown = 0;
+          buyToggle = false;
           AverageRPG.shootCooldownMax = 12;
         }
       }
       
       //check middle
-      if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
+      else if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
         fill(0);
         displayDialogue(dialogue[2]);
-        if ((key == 'e' || key == 'E') & player.getCoins() >= 50 & buyCooldown > 50) {
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 50 & buyToggle) {
           player.setGun(items.get(1));
           player.addCoins(-50);
-          buyCooldown = 0;
+          buyToggle = false;
           AverageRPG.shootCooldownMax = 10;
         }
       }
       
       //check left
-      if (player.getYPos() >= 790 & player.getXPos() >= 650 & player.getXPos() <= 750) {
+      else if (player.getYPos() >= 790 & player.getXPos() >= 650 & player.getXPos() <= 750) {
         fill(0);
         displayDialogue(dialogue[3]);
         
-        if ((key == 'e' || key == 'E') & player.getCoins() >= 100 & buyCooldown > 50) {
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 100 & buyToggle) {
           player.setGun(items.get(2));
           player.addCoins(-100);
-          buyCooldown = 0;
+          buyToggle = false;
           AverageRPG.shootCooldownMax = 1;
         }
+      }
+      else {
+        buyToggle = true;
       }
     }
   
