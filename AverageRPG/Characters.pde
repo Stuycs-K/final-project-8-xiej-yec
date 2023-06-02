@@ -71,5 +71,8 @@ public class Characters {
   public Gun getGun() {
     return weaponHolding;
   }
+  public void setGun(Gun gun) {
+    weaponHolding = gun;
+  }
 
 }

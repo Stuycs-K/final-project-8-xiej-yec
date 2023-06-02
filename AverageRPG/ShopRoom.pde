@@ -3,25 +3,26 @@ public class ShopRoom extends Room{
   private String[] dialogue;
   float triangleOffset;
   boolean triangleDirection = true;
+  int buyCooldown = 0;
   
   public ShopRoom(){
     super();
     super.name =  "Shop Room";    
     dialogue= new String[]{"What would you like to buy?", //0
-      "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20", //1
-      "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50", //2
-      "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!\nCOST: 100" //3
+      "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20          PRESS [E] TO BUY", //1
+      "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50          PRESS [E] TO BUY", //2
+      "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!\nCOST: 100          PRESS [E] TO BUY" //3
     };
     NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
    //cost depends on how many coins enemies drop
    
    //Standard Gun: does 3 dmg per bullet and has 50 bullets in a mag
    //slow fire rate
-   Gun standardGun = new Gun("Standard Gun", 2, 50 , 20, 1, true);
+   Gun standardGun = new Gun("Standard Gun", 2, 50 , 20, 6, true);
    
    //Good Gun: 10 dmg per bullet and has 50 bullets in a mag
    //med fire rate
-   Gun goodGun = new Gun("Good Gun", 10, 50, 50, 5, true);
+   Gun goodGun = new Gun("Good Gun", 10, 50, 50, 7, true);
    
    //Machine Gun: 2 dmg per bullet but has 200 bullets in a mag
    //high fire rate
@@ -74,6 +75,7 @@ public class ShopRoom extends Room{
   }
   
   public void displayItems(){
+    buyCooldown ++;
       fill(255,255,0);
       rect(250, 800, 100, 25);
       rect(450, 800, 100, 25);
@@ -109,18 +111,38 @@ public class ShopRoom extends Room{
       if (player.getYPos() >= 790 & player.getXPos() >= 250 & player.getXPos() <= 350) {
         fill(0);
         displayDialogue(dialogue[1]);
+        
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 20 & buyCooldown > 50) {
+          player.setGun(items.get(0));
+          player.addCoins(-20);
+          buyCooldown = 0;
+          AverageRPG.shootCooldownMax = 12;
+        }
       }
       
       //check middle
       if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
         fill(0);
         displayDialogue(dialogue[2]);
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 50 & buyCooldown > 50) {
+          player.setGun(items.get(1));
+          player.addCoins(-50);
+          buyCooldown = 0;
+          AverageRPG.shootCooldownMax = 10;
+        }
       }
       
       //check left
       if (player.getYPos() >= 790 & player.getXPos() >= 650 & player.getXPos() <= 750) {
         fill(0);
         displayDialogue(dialogue[3]);
+        
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 100 & buyCooldown > 50) {
+          player.setGun(items.get(2));
+          player.addCoins(-100);
+          buyCooldown = 0;
+          AverageRPG.shootCooldownMax = 1;
+        }
       }
     }
   

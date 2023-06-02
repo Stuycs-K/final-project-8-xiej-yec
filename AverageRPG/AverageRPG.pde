@@ -4,12 +4,13 @@ import java.util.*;
 
   
 
-Player player = new Player(new Gun("pistol", 2, 100, 10, 10, true), new PVector(500, 500));
+Player player = new Player(new Gun("pistol", 2, 50, 10, 5, true), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
 boolean A = false;
 boolean S = false;
 boolean D = false;
+boolean E = false;
 boolean shoot = false;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
@@ -17,6 +18,7 @@ ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 Room room = new ShopRoom();
 
 static int shootCooldown = 0;
+static int shootCooldownMax = 10;
 //int countdown;
 
 void setup() {
@@ -60,7 +62,7 @@ void draw() {
   player.move(movementVector);
   movementVector = new PVector(0, 0);
   
-  if (shoot & shootCooldown > 10) {
+  if (shoot & shootCooldown > shootCooldownMax) {
     shootCooldown = 0;
     playerBullets.add(player.useWeapon(new PVector(mouseX, mouseY)));
   }else {
@@ -143,6 +145,9 @@ void keyPressed() {
   }
   if (key == 'd' || key == 'D') {
     D = true;
+  }
+  if (key == 'r' || key == 'R') {
+    player.getGun().reload();
   }
   
   //if (W) {

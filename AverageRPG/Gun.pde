@@ -62,6 +62,9 @@ public class Gun{
   public String toString() {
     return name;
   }
+  public int getCost() {
+    return cost;
+  }
   
   //public Bullet spawnBullet(PVector origin, PVector destination, float radius) {
   //  if (currentBulletCount == 0) {
