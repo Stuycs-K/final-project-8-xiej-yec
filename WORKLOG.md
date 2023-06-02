@@ -26,18 +26,29 @@ CLASSWORK: Attempted to incorporate inBounds method. gave the Room a color (to l
 
 HOMEWORK: Add an enemy to testing room. Purpose is to create and test a function that will check if a bullet overlaps with enemy or not. Next steps is to incorporate it into combatRoom and add friendly/enemy bullet indicator. Also added some small functions to room and player for quality of life (display room name, make enemy red, make hitbox variable). Ended up completely altering inBounds method.
 
-### 5/26/23
+### 5/26/23 + weekend
 
 CLASSWORK: Made a shoot countdown timer that would allow the player to hold down or tap the button to fire. Casey also made a timer, but we ended up using mine :) All my work was pushed onto the brank KCs-work.
 
 HOMEWORK: Added onto combatRoom so that combatRoom spawns a specified amount of enemies. combatRoom will display itself, its enemies, and an endscreen / door to the next room. It will also calculate enemy movement and bullet collision. ADDITIONALLY, players now have a reloading and bullet count mechanic, and will have their HP displayed. No penalties for hitting 0 HP (yet). Gun constructor now also has access to bullet speed and combatRoom color tweaked to be lighter for better text readability. Work was pushed onto the branch Game.
 
-### 5/27/23
+### 5/30/23
 
 CLASSWORK: Excused Absence
 
 HOMEWORK: Cost variable was added to enemy which caused them to no longer have -1 bullets and be able to reload. Had to fix this because I originally did not intend for enemies to reload their ammo and therefore the reloading is connected to the shooting cooldown of the player and not whoever spawns the bullet (enemies may be able to reload if shooting cooldown is made a characters variable?)
 
+### 5/30/23
+
+CLASSWORK: Added doorway system in which players are directed to walk into a green door to progress through different rooms (currently only combat rooms)
+
+HOMEWORK: Expand doorway system to include shop rooms (they alternate).
+
+### 6/1/23
+
+CLASSWORK: Regents Exam
+
+HOMEWORK: Allow player to reload at any given time, provided that they press R. Add some cheat buttons that allow the player to skip combat rooms and manipulate their hp/gold. Tweaked the stats of the guns and tied shootCooldown into the guns (though they are not yet part of the gun class). Added a purchasing system, in which players will need to kill enemies to get coins, and can choose to use the coins to swap their guns with other guns in shop rooms. Game should have most, if not all, core mechanics for the demo.
 
 =======
 
