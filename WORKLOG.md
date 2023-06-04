@@ -99,3 +99,9 @@ HOMEWORK: Finish up coloring bullets by making a isFriendly pararameter. Doesn't
 CLASSWORK: Updated the prototype doc to include our current process and changes to the game. Started displaying items in shop room.
 
 HOMEWORK: Finished up shop room's display items. Added titles that player can walk over and it will show dialogue explaining the item descriptions.
+
+### 6/2/23 + weekend
+
+CLASSWORK: N/A
+
+HOMEWORK: Update max number of coins dropped by enemies, balanced the number of mags in the machine gun, and fixed the positionof the game over sign on the game over screen.
