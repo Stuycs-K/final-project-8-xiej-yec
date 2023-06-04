@@ -210,6 +210,6 @@ void deathScreen(){
       background(0, 0, 0);
       fill(250);
       textSize(100);
-      text("GAME OVER", 400, 500);
+      text("GAME OVER", 250, 500);
   }
 }
