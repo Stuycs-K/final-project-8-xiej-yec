@@ -53,7 +53,7 @@ public class CombatRoom extends Room{
       Enemy e = enemies.get(i);
       
       if (e.getHP() == 0) {
-        player.addCoins((int)(random(5, 10)));
+        player.addCoins((int)(random(5, 20)));
         enemies.remove(i);
         i --;
       }
