@@ -2,8 +2,6 @@ import java.util.*;
 //ArrayList<Weapon> weaponList = new ArrayList<Weapon>();
 //weaponList.add(new Weapon("fist", 5, .1));
 
-  
-
 Player player = new Player(new Gun("pistol", 2, 50, 10, 5, true), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
@@ -16,6 +14,14 @@ ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
 Room room = new ShopRoom();
+
+//ArrayList<Room> rooms = new ArrayList<Room>();
+//rooms.add(new CombatRoom((int)(random(2, 5))));
+//rooms.add(new RestoreRoom());
+//rooms.add(new CombatRoom((int)(random(2, 5))));
+//rooms.add(new RestoreRoom());
+//rooms.add(new ShopRoom());
+//add BossRoom too
 
 static int shootCooldown = 0;
 static int shootCooldownMax = 10;
