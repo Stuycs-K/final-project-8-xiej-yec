@@ -104,4 +104,4 @@ HOMEWORK: Finished up shop room's display items. Added titles that player can wa
 
 CLASSWORK: N/A
 
-HOMEWORK: Update max number of coins dropped by enemies, balanced the number of mags in the machine gun, and fixed the positionof the game over sign on the game over screen.
+HOMEWORK: Update max number of coins dropped by enemies, balanced the number of mags in the machine gun, and fixed the positionof the game over sign on the game over screen. Finished up RestoreRoom and its displayRoom() function and the restore button. Tried to get the merchant to be displayed but it's not working
