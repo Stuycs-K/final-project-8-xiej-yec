@@ -13,7 +13,7 @@ boolean shoot = false;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
-Room room = new ShopRoom();
+Room room = new RestoreRoom();
 
 //ArrayList<Room> rooms = new ArrayList<Room>();
 //rooms.add(new CombatRoom((int)(random(2, 5))));
