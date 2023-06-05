@@ -5,10 +5,4 @@ public class NPC extends Characters {
     super(name, 20, 20, null, position_, true);
     dialogue = dialogueTree_;
   }
-  
-  public void display() { 
-    float x = position.x;
-    float y = position.y;
-    rect(x - 15, y - 15, 30, 30);   
-  }
 }

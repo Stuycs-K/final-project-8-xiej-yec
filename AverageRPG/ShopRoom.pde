@@ -6,8 +6,7 @@ public class ShopRoom extends Room{
   int buyCooldown = 0;
   
   public ShopRoom(){
-    super();
-    super.name =  "Shop Room";    
+    super();   
     dialogue= new String[]{"What would you like to buy?", //0
       "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20          PRESS [E] TO BUY", //1
       "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50          PRESS [E] TO BUY", //2
@@ -37,6 +36,7 @@ public class ShopRoom extends Room{
   public void displayRoom() {
     super.displayRoom();
     displayItems();
+    //merchant.display();
     
     fill(0,255,0);
     rect(800, 400, 5, 200);
@@ -145,8 +145,4 @@ public class ShopRoom extends Room{
         }
       }
     }
-  
-  
-  
-  
 }
