@@ -39,3 +39,4 @@ public class RestoreRoom extends Room{
     
     nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
   }
+}
