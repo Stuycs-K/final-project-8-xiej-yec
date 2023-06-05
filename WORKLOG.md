@@ -50,6 +50,12 @@ CLASSWORK: Regents Exam
 
 HOMEWORK: Allow player to reload at any given time, provided that they press R. Add some cheat buttons that allow the player to skip combat rooms and manipulate their hp/gold. Tweaked the stats of the guns and tied shootCooldown into the guns (though they are not yet part of the gun class). Added a purchasing system, in which players will need to kill enemies to get coins, and can choose to use the coins to swap their guns with other guns in shop rooms. Game should have most, if not all, core mechanics for the demo.
 
+### 6/2/23 + weekend
+
+CLASSWORK: TEST
+
+HOMEWORK: BossRoom, EnemyBoss. Completed phase 1 of the boss, may plan to add more. Thinking of having the boss spawn 2 basic enemies in phase 2 and move around.
+
 =======
 
 ## GROUP MEMBER 2 (Casey Ye)
