@@ -44,7 +44,7 @@ public class CombatRoom extends Room{
       triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
       noFill();
       
-      nextRoom(790, 600, 400, new ShopRoom());
+      nextRoom(790, 600, 400, new RestoreRoom());
       
     }
   }
