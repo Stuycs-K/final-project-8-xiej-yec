@@ -14,7 +14,7 @@ public class CombatRoom extends Room{
       //enemies have infintite bulets
       int HP = (int)random(5, 9) * 10;
       Gun gun = new Gun("standard", 1 , -1, -1, 5, false);
-      enemies.add(new Enemy("basic", HP, HP, gun, new PVector(random(220, 780), random(220, 780))));
+      enemies.add(new Enemy("basic", HP, HP, gun, new PVector(random(220, 780), random(220, 780)), 80, (int)random(30, 55)));
     }
   }
   

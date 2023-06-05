@@ -21,7 +21,9 @@ public class Gun{
     return currentBulletCount;
   }
   public void reload(){
-    AverageRPG.shootCooldown = -100;
+    if (isFriendly) {
+      AverageRPG.shootCooldown = -100;
+    }
     currentBulletCount = totalBulletCount;
   }
   public boolean getIsFriendly(){
@@ -44,7 +46,7 @@ public class Gun{
     if (currentBulletCount > 0) {
       currentBulletCount --;
     }
-    if (currentBulletCount == 0) {
+    if (currentBulletCount <= 0) {
       reload();
     }
     
@@ -56,7 +58,12 @@ public class Gun{
     
     direction.mult(speed);
     
-    return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
+    if (totalBulletCount >= 0) {
+      return new Bullet(origin.x, origin.y, direction.x, direction.y, this, radius);
+    }
+    else {
+      return new Bullet(origin.x, origin.y, direction.x, direction.y, this, 0);
+    }
     
   }
   public String toString() {

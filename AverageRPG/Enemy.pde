@@ -1,11 +1,14 @@
 public class Enemy extends Characters {
-  private int moveCooldownMax = (int)random(30, 55);
+  private int moveCooldownMax;
   private int moveCooldown = 0;
   private int shootCooldown = 0;
+  private int shootCooldownMax;
   private PVector currentMovement = new PVector(random(-1, 1), random(-2, 2));
   
-  public Enemy(String name_, int maxHP_, int HP_, Gun weapon, PVector position_) {
+  public Enemy(String name_, int maxHP_, int HP_, Gun weapon, PVector position_, int shoot, int move) {
     super(name_, maxHP_, HP_, weapon, position_, false);
+    shootCooldownMax = shoot;
+    moveCooldownMax = move;
   }
   
   public void display() { //include health bar and sprites
@@ -17,13 +20,17 @@ public class Enemy extends Characters {
   }
   
   public void resetMovement() {
-    moveCooldownMax = (int)random(30, 55);
+    moveCooldownMax = (int)(random(30, 55));
     moveCooldown = 0;
     currentMovement = new PVector(random(-2, 2), random(-2, 2));
   }
+  public void resetShoot(int shoot) {
+    shootCooldownMax = shoot;
+    shootCooldown = 0;
+  }
   
   public boolean canShoot() {
-    if (this.shootCooldown >= 80) {
+    if (this.shootCooldown >= shootCooldownMax) {
       this.shootCooldown = 0;
       return true;
     }
@@ -33,12 +40,15 @@ public class Enemy extends Characters {
     return false;
   }
   
-  public PVector chooseMovement() {
+  public PVector chooseMovement() {  
     moveCooldown ++;
-    if (moveCooldown >= moveCooldownMax) {
+    if (moveCooldown >= moveCooldownMax && moveCooldownMax != -1) {
       moveCooldown = 0;
       currentMovement = new PVector(random(-2, 2), random(-2, 2));
     }
     return currentMovement;
+  }
+  public void setMaxShoot(int shoot) {
+    shootCooldownMax = shoot;
   }
 }
