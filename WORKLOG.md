@@ -56,6 +56,12 @@ CLASSWORK: TEST
 
 HOMEWORK: BossRoom, EnemyBoss. Completed phase 1 of the boss, may plan to add more. Thinking of having the boss spawn 2 basic enemies in phase 2 and move around.
 
+### 6/5/23
+
+CLASSWORK: Presented
+
+HOMEWORK: Attempted to add more phases to boss. Have some parts of the other phases working, but movement needs to be fixed.
+
 =======
 
 ## GROUP MEMBER 2 (Casey Ye)
