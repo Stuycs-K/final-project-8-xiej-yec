@@ -1,9 +1,9 @@
 public class ShopRoom extends Room{
   private ArrayList<Gun> items;
   private String[] dialogue;
-  float triangleOffset;
-  boolean triangleDirection = true;
-  int buyCooldown = 0;
+  private float triangleOffset;
+  private boolean triangleDirection = true;
+  private int buyCooldown = 0;
   
   public ShopRoom(){
     super();   
@@ -144,5 +144,5 @@ public class ShopRoom extends Room{
           AverageRPG.shootCooldownMax = 1;
         }
       }
-    }
+  }
 }

@@ -1,6 +1,5 @@
 public class Room{
   private String name;
-
   private PVector leftCorner;
   private color fill;
   private float w, h;
@@ -46,16 +45,20 @@ public class Room{
     noFill();
   }
   
-  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, Room nextInQueue) {
+  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, ArrayList<Room> nextRoom) {
     if (player.getXPos() >= xCoord & player.getYPos() >= yCoordBot & player.getYPos() <= yCoordTop) {
       player.setPosition(new PVector(nextInQueue.getLeft() + player.getHitbox(), nextInQueue.getUp() + h / 2));
-      room = nextInQueue;
+      for (int i = 0; i < nextRoom.size(); i++){
+        room = nextRoom[i];
+      }
+      room = nextRoom;
     }
   }
   
   public boolean checkBulletCollision(Bullet bullet) {
     return false;
-  }public boolean checkEnemyBulletCollision(Bullet bullet) {
+  }
+  public boolean checkEnemyBulletCollision(Bullet bullet) {
     return false;
   }
 
