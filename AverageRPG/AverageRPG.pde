@@ -15,12 +15,12 @@ ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
 Room room = new RestoreRoom();
 
-//ArrayList<Room> rooms = new ArrayList<Room>();
-//rooms.add(new CombatRoom((int)(random(2, 5))));
-//rooms.add(new RestoreRoom());
-//rooms.add(new CombatRoom((int)(random(2, 5))));
-//rooms.add(new RestoreRoom());
-//rooms.add(new ShopRoom());
+ArrayList<Room> rooms = new ArrayList<Room>();
+rooms.add(new CombatRoom((int)(random(2, 5))));
+rooms.add(new RestoreRoom());
+rooms.add(new CombatRoom((int)(random(2, 5))));
+rooms.add(new RestoreRoom());
+rooms.add(new ShopRoom());
 //add BossRoom too
 
 static int shootCooldown = 0;

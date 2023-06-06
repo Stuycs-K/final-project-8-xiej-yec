@@ -3,6 +3,7 @@ public class Room{
   private PVector leftCorner;
   private color fill;
   private float w, h;
+  ArrayList<Room> rooms;
   
   public Room(String name_, PVector left, float wid, float hei, color fill_) {
     name = name_;
@@ -10,6 +11,7 @@ public class Room{
     fill = fill_;
     w = wid;
     h = hei;
+    rooms = new ArrayList<Room>();
   }
   public Room() {
     name = "test";
@@ -43,14 +45,12 @@ public class Room{
     text(name, getRight() - name.length() * 5, getUp() - 12);
     
     noFill();
+    nextRoom(790, 600, 400, rooms.remove(0));
   }
   
-  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, ArrayList<Room> nextRoom) {
+  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, Room nextRoom) {
     if (player.getXPos() >= xCoord & player.getYPos() >= yCoordBot & player.getYPos() <= yCoordTop) {
-      player.setPosition(new PVector(nextInQueue.getLeft() + player.getHitbox(), nextInQueue.getUp() + h / 2));
-      for (int i = 0; i < nextRoom.size(); i++){
-        room = nextRoom[i];
-      }
+      player.setPosition(new PVector(nextRoom.getLeft() + player.getHitbox(), nextRoom.getUp() + h / 2));
       room = nextRoom;
     }
   }
