@@ -59,6 +59,9 @@ public class Characters {
   public int getHitbox(){
     return hitbox;
   }
+  public void setHitbox(int num){
+    hitbox = num;
+  }
   
   public void decreaseHP(int damage){
     HP -= damage;

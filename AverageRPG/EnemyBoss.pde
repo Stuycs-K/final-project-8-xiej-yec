@@ -2,6 +2,7 @@ public class EnemyBoss extends Enemy {
   public EnemyBoss() {
     super("BOSS", 500, 500, new Gun("phase 1", 1, 100, 0, 15, false), new PVector(500, 500), 5, -1);
     super.currentMovement = (new PVector(0,0));
+    super.setHitbox(80);
   }
   
   public void update() {
@@ -17,6 +18,7 @@ public class EnemyBoss extends Enemy {
     if (super.getHP() <= super.getMaxHP() * 4 / 5) {
       super.currentMovement = new PVector(random(-1, 1), random(-2, 2));
       super.setGun(new Gun("phase 2", 1, -1, 0, 15, false));
+      super.setHitbox(60);
     }
   }
   
