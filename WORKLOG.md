@@ -110,4 +110,10 @@ HOMEWORK: Finished up shop room's display items. Added titles that player can wa
 
 CLASSWORK: N/A
 
-HOMEWORK: Update max number of coins dropped by enemies, balanced the number of mags in the machine gun, and fixed the positionof the game over sign on the game over screen. Finished up RestoreRoom and its displayRoom() function and the restore button. Tried to get the merchant to be displayed but it's not working
+HOMEWORK: Update max number of coins dropped by enemies, balanced the number of mags in the machine gun, and fixed the position of the game over sign on the game over screen. Finished up RestoreRoom and its displayRoom() function and the restore button. Tried to get the merchant to be displayed but it's not working
+
+### 6/5/23
+
+CLASSWORK: N/A (presentations)
+
+HOMEWORK: Added ArrayList of rooms in the order they would be in the game. 
