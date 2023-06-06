@@ -45,7 +45,7 @@ public class Room{
     text(name, getRight() - name.length() * 5, getUp() - 12);
     
     noFill();
-    nextRoom(790, 600, 400, rooms.remove(0));
+    //nextRoom(790, 600, 400, rooms.remove(0));
   }
   
   public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, Room nextRoom) {

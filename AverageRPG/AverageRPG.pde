@@ -13,7 +13,13 @@ boolean shoot = false;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
-Room room = new RestoreRoom();
+//Room room = new RestoreRoom();
+
+
+
+static int shootCooldown = 0;
+static int shootCooldownMax = 10;
+//int countdown;
 
 ArrayList<Room> rooms = new ArrayList<Room>();
 rooms.add(new CombatRoom((int)(random(2, 5))));
@@ -21,11 +27,7 @@ rooms.add(new RestoreRoom());
 rooms.add(new CombatRoom((int)(random(2, 5))));
 rooms.add(new RestoreRoom());
 rooms.add(new ShopRoom());
-//add BossRoom too
-
-static int shootCooldown = 0;
-static int shootCooldownMax = 10;
-//int countdown;
+  //add BossRoom too
 
 void setup() {
   size(1000, 1000);
@@ -34,6 +36,7 @@ void setup() {
 
 void draw() {
   background(0, 0, 0);
+  Room room = rooms.remove(0);
   room.displayRoom();
   player.display();
   
