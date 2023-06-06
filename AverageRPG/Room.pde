@@ -3,7 +3,7 @@ public class Room{
   private PVector leftCorner;
   private color fill;
   private float w, h;
-  ArrayList<Room> rooms;
+  //ArrayList<Room> rooms;
   
   public Room(String name_, PVector left, float wid, float hei, color fill_) {
     name = name_;
@@ -11,7 +11,6 @@ public class Room{
     fill = fill_;
     w = wid;
     h = hei;
-    rooms = new ArrayList<Room>();
   }
   public Room() {
     name = "test";
