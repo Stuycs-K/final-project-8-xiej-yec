@@ -3,7 +3,7 @@ public class Enemy extends Characters {
   private int moveCooldown = 0;
   private int shootCooldown = 0;
   private int shootCooldownMax;
-  private PVector currentMovement = new PVector(random(-1, 1), random(-2, 2));
+  private PVector currentMovement = new PVector(random(-2, 2), random(-2, 2));
   
   public Enemy(String name_, int maxHP_, int HP_, Gun weapon, PVector position_, int shoot, int move) {
     super(name_, maxHP_, HP_, weapon, position_, false);
@@ -50,5 +50,8 @@ public class Enemy extends Characters {
   }
   public void setMaxShoot(int shoot) {
     shootCooldownMax = shoot;
+  }
+  public void setMaxMove(int move) {
+    moveCooldownMax = move;
   }
 }
