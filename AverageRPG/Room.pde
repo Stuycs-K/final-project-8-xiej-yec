@@ -11,6 +11,7 @@ public class Room{
     fill = fill_;
     w = wid;
     h = hei;
+    
   }
   public Room() {
     name = "test";

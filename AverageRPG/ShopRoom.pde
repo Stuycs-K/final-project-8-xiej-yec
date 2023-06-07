@@ -55,7 +55,8 @@ public class ShopRoom extends Room{
     triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
     noFill();
     
-    nextRoom(790, 600, 400, rooms.remove(0));
+    //nextRoom(790, 600, 400, rooms.remove(0));
+    nextRoom(790, 600, 400, new RestoreRoom());
   }
   
   public void displayDialogue(String words){

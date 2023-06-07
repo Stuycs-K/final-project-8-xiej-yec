@@ -1,25 +1,17 @@
-public class RestoreRoom extends Room{
+public class LoadingRoom extends Room{
   float triangleOffset;
   boolean triangleDirection = true;
-
-  public RestoreRoom(){
-    super("Restore Room", new PVector(200, 200), 600, 600, color(119, 252, 123));
+  private String[] dialogue;
+  
+   public LoadingRoom(){
+    super("Loading Room", new PVector(200, 200), 600, 600, color(140, 244, 255));
+    dialogue= new String[] {"Welcome to your average RPG game", //0
+    "Just walk to the triangle to progress!"} //1
+    NPC guide = new NPC("Guide", new PVector(500, 800), dialogue);
   }
-     
-  public void displayRoom(){
-    super.displayRoom();
-    
-    fill(255);
-    rect(400, 600, 200, 100);
-    fill(0);
-    textSize(20); 
-    text("Walk over to refill hp", 420, 650);
-    
-    if (player.getYPos() >= 600 & player.getXPos() >= 400 & player.getYPos() <= 700 & player.getXPos() <= 600){
-      player.setHP(player.getMaxHP());
-    }
-    
-    
+ 
+   public void displayRoom(){
+   super.displayRoom();
     fill(0,255,0);
     rect(800, 400, 5, 200);
     if (triangleOffset + 830 >= 840) {
@@ -38,6 +30,6 @@ public class RestoreRoom extends Room{
     noFill();
     
     nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
-  }
+   }
   
 }
