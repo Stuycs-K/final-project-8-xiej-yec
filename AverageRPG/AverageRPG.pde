@@ -26,6 +26,7 @@ void setup() {
   size(1000, 1000);
   //countdown = 0;
 
+  rooms.add(new ShopRoom());
   rooms.add(new LoadingRoom());
   rooms.add(new CombatRoom((int)(random(3, 5))));
   rooms.add(new RestoreRoom());
