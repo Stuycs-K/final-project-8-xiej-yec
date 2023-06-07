@@ -45,7 +45,7 @@ public class BossRoom extends CombatRoom{
       PVector movement = e.chooseMovement(2);
       e.move(movement);
       if (!inBounds(e)) {
-        e.move(PVector.mult(movement, -1));
+        e.setCurrentMovement(PVector.mult(movement, -1));
         //e.resetMovement(2);
       }
       

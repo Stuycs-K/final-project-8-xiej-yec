@@ -54,4 +54,7 @@ public class Enemy extends Characters {
   public void setMaxMove(int move) {
     moveCooldownMax = move;
   }
+  public void setCurrentMovement(PVector vector) {
+    this.currentMovement = vector;
+  }
 }
