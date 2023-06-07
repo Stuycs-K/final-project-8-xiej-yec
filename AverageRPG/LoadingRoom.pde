@@ -29,7 +29,11 @@ public class LoadingRoom extends Room{
     triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
     noFill();
     
-    nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
+      if (rooms.size() > 0) {
+        triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
+        rect(800, 400, 5, 200);
+        nextRoom(790, 600, 400);
+      }
    }
   
 }
