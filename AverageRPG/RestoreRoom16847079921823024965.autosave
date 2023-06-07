@@ -23,11 +23,12 @@ public class RestoreRoom extends Room{
       player.setHP(player.getMaxHP());
       fill(255);
       textSize(50); 
-      text(dialogue[0], 250, 800);
+      text(dialogue[0], 200, 850);
     }
     
     
     fill(0,255,0);
+    rect(800, 400, 5, 200);
     if (triangleOffset + 830 >= 840) {
       triangleDirection = false;
     }
@@ -40,18 +41,10 @@ public class RestoreRoom extends Room{
     else {
       triangleOffset -= .5;
     }
-    
-<<<<<<< HEAD
-    nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
-=======
-    if (rooms.size() > 0) {
-      triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
-      rect(800, 400, 5, 200);
-      nextRoom(790, 600, 400);
-    }
-    
+    triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
     noFill();
->>>>>>> 6d212194d2ccf4d222f1a0c801fc17d3866f5b48
+    
+    nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
   }
   
 }

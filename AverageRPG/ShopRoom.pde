@@ -6,7 +6,7 @@ public class ShopRoom extends Room{
   private int buyCooldown = 0;
   
   public ShopRoom(){
-    super();   
+    super("Shop Room", new PVector(200, 200), 600, 600, color(255,182,193));   
     dialogue= new String[]{"What would you like to buy?", //0
       "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20          PRESS [E] TO BUY", //1
       "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50          PRESS [E] TO BUY", //2
@@ -39,7 +39,6 @@ public class ShopRoom extends Room{
     //merchant.display();
     
     fill(0,255,0);
-    rect(800, 400, 5, 200);
     if (triangleOffset + 830 >= 840) {
       triangleDirection = false;
     }
@@ -52,11 +51,19 @@ public class ShopRoom extends Room{
     else {
       triangleOffset -= .5;
     }
-    triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
-    noFill();
     
+<<<<<<< HEAD
     //nextRoom(790, 600, 400, rooms.remove(0));
     nextRoom(790, 600, 400, new RestoreRoom());
+=======
+    if (rooms.size() > 0) {
+      triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
+      rect(800, 400, 5, 200);
+      nextRoom(790, 600, 400);
+    }
+    
+    noFill();
+>>>>>>> 6d212194d2ccf4d222f1a0c801fc17d3866f5b48
   }
   
   public void displayDialogue(String words){

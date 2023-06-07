@@ -19,12 +19,18 @@ static int shootCooldown = 0;
 static int shootCooldownMax = 10;
 //int countdown;
 
+<<<<<<< HEAD
 //static ArrayList<Room> rooms = new ArrayList<Room>();
 //Room room = new Room();
+=======
+ArrayList<Room> rooms = new ArrayList<Room>();
+Room room;
+>>>>>>> 6d212194d2ccf4d222f1a0c801fc17d3866f5b48
 
 void setup() {
   size(1000, 1000);
   //countdown = 0;
+<<<<<<< HEAD
   //rooms.add((Room)(new CombatRoom((int)(random(3, 5)))));
   //rooms.add((Room)(new RestoreRoom()));
   //rooms.add((Room)(new CombatRoom((int)(random(5, 7)))));
@@ -32,6 +38,15 @@ void setup() {
   //rooms.add((Room)(new ShopRoom()));
   ////add BossRoom 
   //room = rooms.remove(0);
+=======
+  rooms.add(new CombatRoom((int)(random(3, 5))));
+  rooms.add(new RestoreRoom());
+  rooms.add(new CombatRoom((int)(random(5, 7))));
+  rooms.add(new RestoreRoom());
+  rooms.add(new ShopRoom());
+  //add BossRoom 
+  room = rooms.remove(0);
+>>>>>>> 6d212194d2ccf4d222f1a0c801fc17d3866f5b48
 }
 
 void draw() {
