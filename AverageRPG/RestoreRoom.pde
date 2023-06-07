@@ -1,9 +1,13 @@
 public class RestoreRoom extends Room{
   float triangleOffset;
   boolean triangleDirection = true;
+  private String[] dialogue;
 
   public RestoreRoom(){
     super("Restore Room", new PVector(200, 200), 600, 600, color(119, 252, 123));
+    dialogue= new String[]{"Guide : That wasn't so bad was it?", //0
+    "Guide : Hang in there!" //1
+    };
   }
      
   public void displayRoom(){
@@ -17,6 +21,9 @@ public class RestoreRoom extends Room{
     
     if (player.getYPos() >= 600 & player.getXPos() >= 400 & player.getYPos() <= 700 & player.getXPos() <= 600){
       player.setHP(player.getMaxHP());
+      fill(255);
+      textSize(50); 
+      text(dialogue[0], 250, 800);
     }
     
     
