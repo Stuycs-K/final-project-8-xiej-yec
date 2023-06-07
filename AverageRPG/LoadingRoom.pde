@@ -6,7 +6,7 @@ public class LoadingRoom extends Room{
    public LoadingRoom(){
     super("Loading Room", new PVector(200, 200), 600, 600, color(140, 244, 255));
     dialogue= new String[] {"Welcome to your average RPG game", //0
-    "Just walk to the triangle to progress!"} //1
+    "Just walk to the triangle to progress!"}; //1
     NPC guide = new NPC("Guide", new PVector(500, 800), dialogue);
   }
  
