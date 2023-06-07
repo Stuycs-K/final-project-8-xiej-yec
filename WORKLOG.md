@@ -62,6 +62,12 @@ CLASSWORK: Presented
 
 HOMEWORK: Attempted to add more phases to boss. Have some parts of the other phases working, but movement needs to be fixed.
 
+### 6/6/23
+
+CLASSWORK: Tried to help Casey create an arraylist for better organization of the rooms.
+
+HOMEWORK: Managed to create a working arraylist of rooms that will follow the order of the arraylist. Also added some code so that when you reach the last room in the arraylist, there will not be a doorway to travel to.
+
 =======
 
 ## GROUP MEMBER 2 (Casey Ye)
