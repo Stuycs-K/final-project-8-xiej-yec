@@ -47,10 +47,10 @@ public class Room{
     //nextRoom(790, 600, 400, rooms.remove(0));
   }
   
-  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot, Room nextRoom) {
+  public void nextRoom(float xCoord, float yCoordTop, float yCoordBot) {
     if (player.getXPos() >= xCoord & player.getYPos() >= yCoordBot & player.getYPos() <= yCoordTop) {
-      player.setPosition(new PVector(nextRoom.getLeft() + player.getHitbox(), nextRoom.getUp() + h / 2));
-      room = nextRoom;
+      room = rooms.remove(0);
+      player.setPosition(new PVector(room.getLeft() + player.getHitbox(), room.getUp() + h / 2));
     }
   }
   
@@ -59,6 +59,10 @@ public class Room{
   }
   public boolean checkEnemyBulletCollision(Bullet bullet) {
     return false;
+  }
+  
+  public String toString() {
+    return name;
   }
 
 }

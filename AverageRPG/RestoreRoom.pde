@@ -21,7 +21,6 @@ public class RestoreRoom extends Room{
     
     
     fill(0,255,0);
-    rect(800, 400, 5, 200);
     if (triangleOffset + 830 >= 840) {
       triangleDirection = false;
     }
@@ -34,10 +33,14 @@ public class RestoreRoom extends Room{
     else {
       triangleOffset -= .5;
     }
-    triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
-    noFill();
     
-    nextRoom(790, 600, 400, rooms.remove(0));
+    if (rooms.size() > 0) {
+      triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
+      rect(800, 400, 5, 200);
+      nextRoom(790, 600, 400);
+    }
+    
+    noFill();
   }
   
 }
