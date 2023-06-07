@@ -47,7 +47,7 @@ public class ShopRoom extends Room{
 
       fill(225);
       textSize(50); 
-      text(dialogue[0], 170, 880);
+      text(dialogue[0], 120, 890);
       textSize(12);
    
     
