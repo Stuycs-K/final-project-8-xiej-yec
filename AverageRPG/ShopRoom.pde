@@ -4,15 +4,16 @@ public class ShopRoom extends Room{
   private float triangleOffset;
   private boolean triangleDirection = true;
   private int buyCooldown = 0;
+  private NPC merchant;
   
   public ShopRoom(){
     super("Shop Room", new PVector(200, 200), 600, 600, color(255,182,193));   
-    dialogue= new String[]{"What would you like to buy?", //0
+    dialogue= new String[]{"Merchant: What would you like to buy?", //0
       "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20          PRESS [E] TO BUY", //1
       "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50          PRESS [E] TO BUY", //2
       "The Machine Gun has a total of 100 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!\nCOST: 100          PRESS [E] TO BUY" //3
     };
-    NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
+
    //cost depends on how many coins enemies drop
    
    //Standard Gun: does 3 dmg per bullet and has 50 bullets in a mag
@@ -36,7 +37,19 @@ public class ShopRoom extends Room{
   public void displayRoom() {
     super.displayRoom();
     displayItems();
-    //merchant.display();
+
+    NPC merchant = new NPC("Merchant", new PVector(500, 400), dialogue);
+    merchant.display();
+    
+     fill(0);
+     textSize(12);
+     text("Merchant", 470, 350);
+
+      fill(225);
+      textSize(50); 
+      text(dialogue[0], 170, 880);
+      textSize(12);
+   
     
     fill(0,255,0);
     if (triangleOffset + 830 >= 840) {
@@ -62,7 +75,9 @@ public class ShopRoom extends Room{
   }
   
   public void displayDialogue(String words){
-    text(words, 250, 700);
+    textSize(50); 
+    text(words, 150, 870);
+    textSize(12);
   }
   
   public String checkStandardStats(){
