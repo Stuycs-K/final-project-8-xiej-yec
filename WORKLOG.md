@@ -128,4 +128,10 @@ HOMEWORK: Update max number of coins dropped by enemies, balanced the number of 
 
 CLASSWORK: N/A (presentations)
 
-HOMEWORK: Added ArrayList of rooms in the order they would be in the game. 
+HOMEWORK: Added ArrayList of rooms in the order they would be in the game.
+
+### 6/6/23
+
+CLASSWORK: Tried to get the ArrayList to work
+
+HOMEWORK: Created LoadingRoom that would go in the beginning of the room. Created a new NPC "Guide" that would display dialogue and try to make the game more interactive. Added Guide to RestoreRoom as well
