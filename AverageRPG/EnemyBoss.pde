@@ -5,10 +5,10 @@ public class EnemyBoss extends Enemy {
     super("BOSS", 500, HP, new Gun("phase 1", 1, 100, 0, 15, false), pos, 5, -1);
     cloneReady = cloneR;
     if (super.getHP() > super.getMaxHP() * 4 / 5) {
-      super.currentMovement = (new PVector(0,0));
+      super.setCurrentMovement(new PVector(0,0));
     }
     else {
-      super.currentMovement = chooseMovement();
+      super.setCurrentMovement(chooseMovement());
     }
     super.setHitbox(80);
   }
@@ -41,16 +41,16 @@ public class EnemyBoss extends Enemy {
   public void resetMovement(int num) {
     super.moveCooldown = 0;
     if (random(2) < 1) {
-      super.currentMovement = new PVector(num, num);
+      super.setCurrentMovement(new PVector(num, num));
     }
     else if (random(2) < 1) {
-      super.currentMovement = new PVector(num, -1 * num);
+      super.setCurrentMovement(new PVector(num, -1 * num));
     }
     else if (random(2) < 1) {
-      super.currentMovement = new PVector(-1 * num, num);
+      super.setCurrentMovement(new PVector(-1 * num, num));
     }
     else {
-      super.currentMovement = new PVector(-1 * num, -1 * num);
+      super.setCurrentMovement(new PVector(-1 * num, -1 * num));
     }
   }
   
@@ -59,16 +59,16 @@ public class EnemyBoss extends Enemy {
     if (super.moveCooldown >= super.moveCooldownMax && super.moveCooldownMax != -1) {
       super.moveCooldown = 0;
       if ((random(2)) < 1) {
-        super.currentMovement = new PVector(num, num);
+        super.setCurrentMovement(new PVector(num, num));
       }
       else if ((random(2)) < 1) {
-        super.currentMovement = new PVector(num, -1 * num);
+        super.setCurrentMovement(new PVector(num, -1 * num));
       }
       else if ((random(2)) < 1) {
-        super.currentMovement = new PVector(-1 * num, num);
+        super.setCurrentMovement(new PVector(-1 * num, num));
       }
       else {
-        super.currentMovement = new PVector(-1 * num, -1 * num);
+        super.setCurrentMovement(new PVector(-1 * num, -1 * num));
       }
     }
     return super.currentMovement;
