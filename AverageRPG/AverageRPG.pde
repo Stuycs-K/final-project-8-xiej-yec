@@ -27,13 +27,12 @@ void setup() {
   //countdown = 0;
 
   rooms.add(new LoadingRoom());
-  rooms.add(new BossRoom());
   rooms.add(new CombatRoom((int)(random(3, 5))));
   rooms.add(new RestoreRoom());
   rooms.add(new CombatRoom((int)(random(5, 7))));
   rooms.add(new RestoreRoom());
   rooms.add(new ShopRoom());
-  //rooms.add(new BossRoom());
+  rooms.add(new BossRoom());
   room = rooms.remove(0);
 }
 

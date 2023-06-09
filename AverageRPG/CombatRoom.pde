@@ -20,7 +20,10 @@ public class CombatRoom extends Room{
   
   public void displayRoom() {
     super.displayRoom();
-    enemyAction();
+    
+    if (!(this instanceof BossRoom)) {
+      enemyAction();
+    }
     
     for (int i = 0 ; i < enemies.size(); i++){
       enemies.get(i).display();

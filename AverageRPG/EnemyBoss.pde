@@ -58,13 +58,14 @@ public class EnemyBoss extends Enemy {
     super.moveCooldown ++;
     if (super.moveCooldown >= super.moveCooldownMax && super.moveCooldownMax != -1) {
       super.moveCooldown = 0;
-      if ((random(2)) < 1) {
+      int rand = (int)(random(0, 4));
+      if (rand == 0) {
         super.setCurrentMovement(new PVector(num, num));
       }
-      else if ((random(2)) < 1) {
+      else if (rand == 1) {
         super.setCurrentMovement(new PVector(num, -1 * num));
       }
-      else if ((random(2)) < 1) {
+      else if (rand == 2) {
         super.setCurrentMovement(new PVector(-1 * num, num));
       }
       else {

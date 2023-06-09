@@ -7,19 +7,21 @@ public class BossRoom extends CombatRoom{
     enemies.add(new EnemyBoss(hp, original, pos));
   }
   public void generateEnemies(int hp){
-    enemies.add(new EnemyBoss(200, true, new PVector(500, 500)));
+    enemies.add(new EnemyBoss(500, true, new PVector(500, 500)));
   }
   
   public void displayRoom() {
     super.displayRoom();
-    //enemyAction();
+    
+    enemyAction();
     
     for (int i = 0; i < enemies.size(); i ++) {
       EnemyBoss currentBoss = (EnemyBoss)enemies.get(i);
       currentBoss.update();
       
       if (currentBoss.getHP() <= currentBoss.getMaxHP() * 2 / 5 & currentBoss.getCloneReady()) {
-        generateEnemies(currentBoss.getHP(), false, currentBoss.getPosition());
+        enemies.add(new EnemyBoss(currentBoss.getHP(), false, PVector.add(currentBoss.getPosition(), new PVector(1, 1))));
+        enemies.add(new EnemyBoss(currentBoss.getHP(), false, PVector.add(currentBoss.getPosition(), new PVector(-1, -1))));
         currentBoss.setCloneReady(false);
       }
     }
@@ -30,7 +32,7 @@ public class BossRoom extends CombatRoom{
       EnemyBoss e = (EnemyBoss)enemies.get(i);
       
       if (e.getHP() == 0) {
-        player.addCoins(9999);
+        player.addCoins(100);
         enemies.remove(i);
         i --;
       }
@@ -49,8 +51,13 @@ public class BossRoom extends CombatRoom{
         //e.resetMovement(2);
       }
       
-      if (e.canShoot()) {
-        enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(-25, 25), random(-25, 25)))));
+      if (e.canShoot() & e.getHP() <= e.getMaxHP() * 4 / 5 & e.getHP() > e.getMaxHP() * 2 / 5) {
+        enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(-15, 15), random(-15, 15)))));
+        enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(-50, -15), random(-50, -15)))));
+        enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(15, 50), random(15, 50)))));
+      }
+      else if (e.canShoot()) {
+        enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(-15, 15), random(-15, 15)))));
       }
     }
   }
