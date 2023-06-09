@@ -135,3 +135,9 @@ HOMEWORK: Added ArrayList of rooms in the order they would be in the game.
 CLASSWORK: Tried to get the ArrayList to work
 
 HOMEWORK: Created LoadingRoom that would go in the beginning of the room. Created a new NPC "Guide" that would display dialogue and try to make the game more interactive. Added Guide to RestoreRoom as well
+
+### 6/7/23 + 6/8/23
+
+CLASSWORK: Fix Guide and Merchant to display. Also fixed position of text and dialogue.
+
+HOMEWORK: Update README file with information
