@@ -95,7 +95,7 @@ void draw() {
       b.move();
       if (room.checkBulletCollision(b)) {
         playerBullets.remove(i);
-          i --;
+        i --;
       }
       b.displayBullet();
     }

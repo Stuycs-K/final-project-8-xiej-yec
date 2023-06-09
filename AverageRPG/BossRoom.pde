@@ -1,17 +1,33 @@
 public class BossRoom extends CombatRoom{
+  ArrayList<Enemy> shields = new ArrayList<Enemy>();
+  boolean shieldsActive;
+  
   public BossRoom() {
     super(1);
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(600, 500), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(500, 600), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(400, 500), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(500, 400), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(550, 450), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(450, 550), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(450, 450), 80, (int)random(30, 55)));
+    shields.add(new Enemy("shield", 30, 30, new Gun("standard", 1 , -1, -1, 5, false), new PVector(550, 550), 80, (int)random(30, 55)));
+    shieldsActive = false;
   }
   
-  public void generateEnemies(int hp, boolean original, PVector pos){
-    enemies.add(new EnemyBoss(hp, original, pos));
-  }
   public void generateEnemies(int hp){
     enemies.add(new EnemyBoss(500, true, new PVector(500, 500)));
   }
   
   public void displayRoom() {
     super.displayRoom();
+    
+    if (shields.size() == 0) {
+      for (int i = 0; i < shields.size(); i ++) {
+        shields.remove(i);
+        i --;
+      }
+    }
     
     enemyAction();
     
@@ -24,10 +40,41 @@ public class BossRoom extends CombatRoom{
         enemies.add(new EnemyBoss(currentBoss.getHP(), false, PVector.add(currentBoss.getPosition(), new PVector(-1, -1))));
         currentBoss.setCloneReady(false);
       }
+      
+      //if (currentBoss.getHP() <= currentBoss.getMaxHP() * 4 / 5) {
+      //  for (int j = 0; j < shields.size(); j ++) {
+      //    shields.remove(j);
+      //    j --;
+      //  }
+      //}
+      
     }
   }
   
   public void enemyAction(){
+    for (int i = 0 ; i < shields.size(); i++){
+      Enemy e = shields.get(i);
+      e.display();
+      
+      if (e.getHP() == 0) {
+        shields.remove(i);
+        i --;
+      }
+      
+      if (shieldsActive) {
+        PVector movement = e.chooseMovement();
+        e.move(movement);
+        if (!inBounds(e)) {
+          e.move(PVector.mult(movement, -1));
+          e.resetMovement();
+        }
+      }
+      
+      if (e.canShoot()) {
+        enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(-15, 15), random(-15, 15)))));
+      }
+    }
+    
     for (int i = 0 ; i < enemies.size(); i++){
       EnemyBoss e = (EnemyBoss)enemies.get(i);
       
@@ -37,11 +84,9 @@ public class BossRoom extends CombatRoom{
         i --;
       }
       
-      //if (e.getHP() > e.getMaxHP() * 4 / 5) {
-      //  if (e.getGun().getCurrentBulletCount() <= 1) {
-      //    e.setGun(new Gun("fake reload", 0, -1, 0, 15, false));
-      //  }
-      //}
+      if (e.getHP() <= e.getMaxHP() * 4 / 5) {
+        shieldsActive = true;
+      }
         
         
       PVector movement = e.chooseMovement(2);
@@ -60,5 +105,19 @@ public class BossRoom extends CombatRoom{
         enemyBullets.add(e.useWeapon(PVector.add(player.getPosition(), new PVector(random(-15, 15), random(-15, 15)))));
       }
     }
+  }
+  
+  public boolean checkBulletCollision(Bullet bullet) {
+    for (int j = 0; j < enemies.size(); j ++) {
+      if (bullet.doDmg(enemies.get(j))) {
+        return true;
+      }
+    }
+    for (int k = 0; k < shields.size(); k ++) {
+      if (bullet.doDmg(shields.get(k))) {
+        return true;
+      }
+    }
+    return false;
   }
 }

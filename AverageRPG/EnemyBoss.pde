@@ -2,7 +2,7 @@ public class EnemyBoss extends Enemy {
   private boolean cloneReady = true;
   
   public EnemyBoss(int HP, boolean cloneR, PVector pos) {
-    super("BOSS", 500, HP, new Gun("phase 1", 1, 100, 0, 15, false), pos, 5, -1);
+    super("BOSS", 500, HP, new Gun("phase 1", 3, 100, 0, 15, false), pos, 5, -1);
     cloneReady = cloneR;
     if (super.getHP() > super.getMaxHP() * 4 / 5) {
       super.setCurrentMovement(new PVector(0,0));
@@ -19,7 +19,7 @@ public class EnemyBoss extends Enemy {
         setMaxShoot(100);
       }
       if (getGun().getCurrentBulletCount() > 1) {
-        setMaxShoot(5);
+        setMaxShoot(2);
       }
     }
     
@@ -80,6 +80,14 @@ public class EnemyBoss extends Enemy {
   }
   public void setCloneReady(boolean newReady) {
     cloneReady = newReady;
+  }
+  
+  public void display() { //include health bar and sprites
+    float x = position.x;
+    float y = position.y;
+    fill(255, 10, 10);
+    text("" + super.getHP() + "/" + super.getMaxHP(), super.getXPos() - 22, super.getYPos() - super.getHitbox() / 1.5);
+    circle(x, y, super.getHitbox());
   }
   
 }
