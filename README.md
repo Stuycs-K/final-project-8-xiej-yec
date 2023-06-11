@@ -39,3 +39,6 @@ Character
 
 Gun
 <img src="gun.png"  width="50%" height="50%">
+
+Bullet
+<img src="bullet.png"  width="50%" height="50%">
