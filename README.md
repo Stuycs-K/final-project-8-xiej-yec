@@ -42,3 +42,7 @@ Gun\
 
 Bullet\
 <img src="bullet.png"  width="50%" height="50%">
+
+Room\
+<img src="room1.png"  width="50%" height="50%">
+<img src="room2.png"  width="50%" height="50%">
