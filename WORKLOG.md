@@ -146,4 +146,4 @@ HOMEWORK: Update README file with information
 
 CLASSWORK : Update README file with information
 
-HOMEWORK : Create PROTOTYPE markdown
+HOMEWORK : Create PROTOTYPE markdown and DEVLOG markdown as well as its information.
