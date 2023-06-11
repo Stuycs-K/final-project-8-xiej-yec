@@ -1,7 +1,7 @@
 # APCS Final Project
 
 ## Group Info
-Postassium Carbonate :Jason Xie and Casey Ye
+Postassium Carbonate: Jason Xie and Casey Ye
 
 ## Overview
 "Average RPG" will be a bullet hell game where the player follows a path through a dungeon. The dungeon consists of two regular enemy rooms, an HP restoration room, and a shop room, where players can buy upgraded weapons, in preparation for the final boss fight.
@@ -30,3 +30,9 @@ Please us W, A, S, D to move the player character. When you are ready to advance
 5. Create a "door mechanism" that will take the player to the next room
 
 6. Implement NPC and dialogue
+
+## UML
+
+Character
+![charDiagram_1]{char1.png}
+![charDiagram_2]{char2.png}
