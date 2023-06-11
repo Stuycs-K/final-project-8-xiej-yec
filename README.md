@@ -36,3 +36,6 @@ Please us W, A, S, D to move the player character. When you are ready to advance
 Character
 <img src="char1.png"  width="50%" height="50%">
 <img src="char2.png"  width="50%" height="50%">
+
+Gun
+<img src="gun.png"  width="50%" height="50%">
