@@ -9,10 +9,12 @@
 
 ## Broken Features/Bugs
 * Inconsistent dialogue size and location
-* Unable to buy gun if you hold down E
+* Unable to same gun multiple times while holding E
 * Hitbox is larger than sprite (hitbox is a rectangle while sprite is a circle)
 
 ## Content Resources
-* Processing Reference
-* [RGB Picker](https://www.rapidtables.com/web/color/RGB_Color.html)
 * Honkai: Star Rail - This was the inspiration behind our room layout, which was taken from the Simulated Universe (a dungeon layout)
+* [RGB Picker](https://www.rapidtables.com/web/color/RGB_Color.html)
+* [Processing Reference](https://processing.org/reference/)
+* [Mr. Konstantinovich's keyboard input code](https://konstantinnovation.github.io/apcsSpring.html#2023-05-25n)
+* [Mr. Konstantinovich's timer code](https://konstantinnovation.github.io/apcsSpring.html#2023-05-24n)
