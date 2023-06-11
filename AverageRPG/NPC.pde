@@ -6,7 +6,12 @@ public class NPC extends Characters {
     dialogue = dialogueTree_;
   }
   
-  void talk(Player player) { // display an element from dialogue when player is nearby
-    
+  public void display(){
+    float x = position.x;
+    float y = position.y;
+    fill(248, 252, 119);
+    rect(x - 30, y - 30, 30, 30);
+    noFill();
   }
+  
 }

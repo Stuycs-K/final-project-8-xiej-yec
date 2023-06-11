@@ -1,19 +1,19 @@
 public class ShopRoom extends Room{
   private ArrayList<Gun> items;
   private String[] dialogue;
-  private float triangleOffset;
-  private boolean triangleDirection = true;
-  private boolean buyCooldown = false;
-  private NPC merchant;
+  float triangleOffset;
+  boolean triangleDirection = true;
+  int buyCooldown = 0;
   
   public ShopRoom(){
-    super("Shop Room", new PVector(200, 200), 600, 600, color(255,182,193));   
-    dialogue= new String[]{"Merchant: What would you like to buy?", //0
+    super();
+    super.name =  "Shop Room";    
+    dialogue= new String[]{"What would you like to buy?", //0
       "The Standard Gun has 50 bullets in a mag and does 3 damage per bullet. However, it has a slow fire rate\nCOST: 20          PRESS [E] TO BUY", //1
       "The Good Gun also has 50 bullets in a mag but does 10 damage per bullet. It has a medium fire rate\nCOST: 50          PRESS [E] TO BUY", //2
-      "The Machine Gun has a total of 100 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!\nCOST: 100          PRESS [E] TO BUY" //3
+      "The Machine Gun has a total of 200 bulls in a mag but does 2 damage per bullet. \n It doesn't even matter because it has a high fire rate!\nCOST: 100          PRESS [E] TO BUY" //3
     };
-
+    NPC merchant = new NPC("Merchant", new PVector(500, 800), dialogue);
    //cost depends on how many coins enemies drop
    
    //Standard Gun: does 3 dmg per bullet and has 50 bullets in a mag
@@ -24,9 +24,9 @@ public class ShopRoom extends Room{
    //med fire rate
    Gun goodGun = new Gun("Good Gun", 10, 50, 50, 7, true);
    
-   //Machine Gun: 2 dmg per bullet but has 100 bullets in a mag
+   //Machine Gun: 2 dmg per bullet but has 200 bullets in a mag
    //high fire rate
-   Gun machineGun = new Gun("Machine Gun", 2, 100, 100, 10, true);
+   Gun machineGun = new Gun("Machine Gun", 2, 200, 100, 10, true);
      
    items= new ArrayList<Gun>();
    items.add(standardGun);
@@ -37,21 +37,9 @@ public class ShopRoom extends Room{
   public void displayRoom() {
     super.displayRoom();
     displayItems();
-
-    NPC merchant = new NPC("Merchant", new PVector(500, 400), dialogue);
-    merchant.display();
-    
-     fill(0);
-     textSize(12);
-     text("Merchant", 470, 350);
-
-      fill(225);
-      textSize(50); 
-      text(dialogue[0], 120, 890);
-      textSize(12);
-   
     
     fill(0,255,0);
+    rect(800, 400, 5, 200);
     if (triangleOffset + 830 >= 840) {
       triangleDirection = false;
     }
@@ -64,18 +52,14 @@ public class ShopRoom extends Room{
     else {
       triangleOffset -= .5;
     }
-    
-    if (rooms.size() > 0) {
-      triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
-      rect(800, 400, 5, 200);
-      nextRoom(790, 600, 400);
-    }
-    
+    triangle(830 + triangleOffset, 500, 850 + triangleOffset, 450, 850 + triangleOffset, 550);
     noFill();
+    
+    nextRoom(790, 600, 400, new CombatRoom((int)(random(2, 5))));
   }
   
   public void displayDialogue(String words){
-    text(words, 250, 570);
+    text(words, 250, 700);
   }
   
   public String checkStandardStats(){
@@ -91,6 +75,7 @@ public class ShopRoom extends Room{
   }
   
   public void displayItems(){
+    buyCooldown ++;
       fill(255,255,0);
       rect(250, 800, 100, 25);
       rect(450, 800, 100, 25);
@@ -127,10 +112,10 @@ public class ShopRoom extends Room{
         fill(0);
         displayDialogue(dialogue[1]);
         
-        if (E & player.getCoins() >= 20 & buyCooldown) {
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 20 & buyCooldown > 50) {
           player.setGun(items.get(0));
           player.addCoins(-20);
-          buyCooldown = false;
+          buyCooldown = 0;
           AverageRPG.shootCooldownMax = 12;
         }
       }
@@ -139,10 +124,10 @@ public class ShopRoom extends Room{
       if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
         fill(0);
         displayDialogue(dialogue[2]);
-        if (E & player.getCoins() >= 50 & buyCooldown) {
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 50 & buyCooldown > 50) {
           player.setGun(items.get(1));
           player.addCoins(-50);
-          buyCooldown = false;
+          buyCooldown = 0;
           AverageRPG.shootCooldownMax = 10;
         }
       }
@@ -152,15 +137,16 @@ public class ShopRoom extends Room{
         fill(0);
         displayDialogue(dialogue[3]);
         
-        if (E & player.getCoins() >= 100 & buyCooldown) {
+        if ((key == 'e' || key == 'E') & player.getCoins() >= 100 & buyCooldown > 50) {
           player.setGun(items.get(2));
           player.addCoins(-100);
-          buyCooldown = false;
+          buyCooldown = 0;
           AverageRPG.shootCooldownMax = 1;
         }
       }
-      if (player.getYPos() < 790 & !E) {
-        buyCooldown = true;
-      }
-  }
+    }
+  
+  
+  
+  
 }

@@ -2,6 +2,8 @@ import java.util.*;
 //ArrayList<Weapon> weaponList = new ArrayList<Weapon>();
 //weaponList.add(new Weapon("fist", 5, .1));
 
+  
+
 Player player = new Player(new Gun("pistol", 2, 50, 10, 5, true), new PVector(500, 500));
 PVector movementVector = new PVector(0, 0);
 boolean W = false;
@@ -13,36 +15,21 @@ boolean shoot = false;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
-//Room room = new LoadingRoom();
+Room room = new ShopRoom();
 
 static int shootCooldown = 0;
 static int shootCooldownMax = 10;
 //int countdown;
 
-ArrayList<Room> rooms = new ArrayList<Room>();
-Room room;
-
 void setup() {
   size(1000, 1000);
   //countdown = 0;
-
-  rooms.add(new LoadingRoom());
-  rooms.add(new CombatRoom((int)(random(3, 5))));
-  rooms.add(new RestoreRoom());
-  rooms.add(new CombatRoom((int)(random(5, 7))));
-  rooms.add(new RestoreRoom());
-  rooms.add(new ShopRoom());
-  rooms.add(new BossRoom());
-  room = rooms.remove(0);
 }
 
 void draw() {
   background(0, 0, 0);
   room.displayRoom();
   player.display();
-  
-  fill(255, 0, 0);
-  circle(mouseX, mouseY, 5);
   
   fill(255, 255, 100);
   rect(50, 200, 100, 100);
@@ -95,7 +82,7 @@ void draw() {
       b.move();
       if (room.checkBulletCollision(b)) {
         playerBullets.remove(i);
-        i --;
+          i --;
       }
       b.displayBullet();
     }
@@ -159,9 +146,6 @@ void keyPressed() {
   if (key == 'd' || key == 'D') {
     D = true;
   }
-  if (key == 'e' || key == 'E') {
-    E = true;
-  }
   if (key == 'r' || key == 'R') {
     player.getGun().reload();
   }
@@ -197,9 +181,6 @@ void keyReleased() {
   if (key == 'd' || key == 'D') {
     D = false;
   }
-  if (key == 'e' || key == 'E') {
-    E = false;
-  }
 }
 void mousePressed() {
   shoot = true;
@@ -207,10 +188,6 @@ void mousePressed() {
   if (mouseX >= 50 & mouseX <= 150 & mouseY > 200 & mouseY <= 300) {
     if (room instanceof CombatRoom) {
       CombatRoom clear = (CombatRoom)room;
-      clear.complete();
-    }
-    if (room instanceof BossRoom) {
-      BossRoom clear = (BossRoom)room;
       clear.complete();
     }
     shoot = false;
@@ -233,25 +210,6 @@ void deathScreen(){
       background(0, 0, 0);
       fill(250);
       textSize(100);
-      text("GAME OVER", 250, 500);
-      text("[P] TO RESTART", 180, 600);
-      if (key == 'p' || key == 'P') {
-        restart();
-      }
+      text("GAME OVER", 400, 500);
   }
-}
-void restart() {
-  while (rooms.size() > 0) {
-    rooms.remove(0);
-  }
-  rooms.add(new LoadingRoom());
-  rooms.add(new BossRoom());
-  rooms.add(new CombatRoom((int)(random(3, 5))));
-  rooms.add(new RestoreRoom());
-  rooms.add(new CombatRoom((int)(random(5, 7))));
-  rooms.add(new RestoreRoom());
-  rooms.add(new ShopRoom());
-  rooms.add(new BossRoom());
-  room = rooms.remove(0);
-  player = new Player(new Gun("pistol", 2, 50, 10, 5, true), new PVector(500, 500));
 }

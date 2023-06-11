@@ -2,6 +2,10 @@ public class LoadingRoom extends Room{
   float triangleOffset;
   boolean triangleDirection = true;
   private String[] dialogue;
+<<<<<<< HEAD
+=======
+  int speakCooldown = 0;
+>>>>>>> ae67af000cc8c594dc9c1ebf278f451c747dca3f
   
    public LoadingRoom(){
     super("Loading Room", new PVector(200, 200), 600, 600, color(140, 244, 255));
@@ -14,7 +18,18 @@ public class LoadingRoom extends Room{
      super.displayRoom();
      NPC guide = new NPC("Guide", new PVector(500, 400), dialogue);
      guide.display();
+<<<<<<< HEAD
  
+=======
+     speakCooldown ++;
+     if (speakCooldown > 500) {
+       displayDialogue(dialogue[1]);
+     }
+     else {
+       displayDialogue(dialogue[0]);
+     }
+     
+>>>>>>> ae67af000cc8c594dc9c1ebf278f451c747dca3f
     fill(0,255,0);
     rect(800, 400, 5, 200);
     if (triangleOffset + 830 >= 840) {
@@ -39,5 +54,14 @@ public class LoadingRoom extends Room{
       }
 
    }
+<<<<<<< HEAD
+=======
+   
+   public void displayDialogue(String words){
+    fill(0);
+    text(words, 405, 360);
+    noFill();
+  }
+>>>>>>> ae67af000cc8c594dc9c1ebf278f451c747dca3f
   
 }

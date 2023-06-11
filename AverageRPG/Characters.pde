@@ -3,12 +3,12 @@ public class Characters {
   private String name;
   private int maxHP;
   private int HP;
-  private Weapon weaponHolding;
+  private Gun weaponHolding;
   PVector position;
   boolean isFriendly;
-  private int hitbox = 20;
+  private int hitbox = 30;
   
-  public Characters(String name_, int maxHP_, int HP_, Weapon weapon_, PVector position_, boolean isFriendly_) {
+  public Characters(String name_, int maxHP_, int HP_, Gun weapon_, PVector position_, boolean isFriendly_) {
     name = name_;
     maxHP = maxHP_;
     HP = HP_;
@@ -17,7 +17,7 @@ public class Characters {
     isFriendly = isFriendly_;
   }
   
-  public void displayCharacter() { //include health bar and sprites
+  public void display() { //include health bar and sprites
     float x = position.x;
     float y = position.y;
     rect(x - hitbox/2, y - hitbox/2, hitbox, hitbox);
@@ -27,7 +27,7 @@ public class Characters {
     HP -= damage;
   }
   public Bullet useWeapon(PVector aimed) {
-    return weaponHolding.spawnBullet(position, aimed, 2.5);
+    return weaponHolding.spawnBullet(position, aimed, 5);
   }
   public void move(PVector movement) {
     position.add(movement);
@@ -44,6 +44,7 @@ public class Characters {
     return position;
   }
   
+
   public void setHP(int newHP){
     HP = newHP;
   }
@@ -58,8 +59,23 @@ public class Characters {
   public int getHitbox(){
     return hitbox;
   }
+  public void setHitbox(int num){
+    hitbox = num;
+  }
   
   public void decreaseHP(int damage){
     HP -= damage;
   }
+  
+  public boolean isDead(){
+    return (getHP() <= 0);
+  }
+  
+  public Gun getGun() {
+    return weaponHolding;
+  }
+  public void setGun(Gun gun) {
+    weaponHolding = gun;
+  }
+
 }
