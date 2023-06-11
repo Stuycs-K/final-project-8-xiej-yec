@@ -1,5 +1,6 @@
 public class BossRoom extends CombatRoom{
   ArrayList<Enemy> shields = new ArrayList<Enemy>();
+  ArrayList<Characters> victory = new ArrayList<Characters>();
   boolean shieldsActive;
   
   public BossRoom() {
@@ -48,6 +49,25 @@ public class BossRoom extends CombatRoom{
       //  }
       //}
       
+    }
+    
+    if (enemies.size() == 0) {
+      textSize(50);
+      fill(0);
+      text("YOU WIN!!! CONGRATS!!!", 250, 500);
+      textSize(12);
+      
+      Characters add = new Characters("confetti", 1, 1, null, new PVector(random(0, 1000), 0), false);
+      add.setHitbox(10);
+      if (random(0, 100) < 30) {
+        victory.add(add);
+      }
+      for (int i = 0; i < victory.size(); i ++) {
+        victory.get(i).move(new PVector((int)random(-2, 2), 2));
+        fill(color(random(0, 255), random(0, 255), random(0, 255)));
+        victory.get(i).display();
+        noFill();
+      }
     }
   }
   
@@ -119,5 +139,11 @@ public class BossRoom extends CombatRoom{
       }
     }
     return false;
+  }
+  public void complete() {
+    super.complete();
+    while (shields.size() > 0) {
+      shields.remove(0);
+    }
   }
 }

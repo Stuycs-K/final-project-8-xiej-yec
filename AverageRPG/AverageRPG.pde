@@ -26,7 +26,6 @@ void setup() {
   size(1000, 1000);
   //countdown = 0;
 
-  rooms.add(new ShopRoom());
   rooms.add(new LoadingRoom());
   rooms.add(new CombatRoom((int)(random(3, 5))));
   rooms.add(new RestoreRoom());
@@ -160,6 +159,9 @@ void keyPressed() {
   if (key == 'd' || key == 'D') {
     D = true;
   }
+  if (key == 'e' || key == 'E') {
+    E = true;
+  }
   if (key == 'r' || key == 'R') {
     player.getGun().reload();
   }
@@ -195,6 +197,9 @@ void keyReleased() {
   if (key == 'd' || key == 'D') {
     D = false;
   }
+  if (key == 'e' || key == 'E') {
+    E = false;
+  }
 }
 void mousePressed() {
   shoot = true;
@@ -202,6 +207,10 @@ void mousePressed() {
   if (mouseX >= 50 & mouseX <= 150 & mouseY > 200 & mouseY <= 300) {
     if (room instanceof CombatRoom) {
       CombatRoom clear = (CombatRoom)room;
+      clear.complete();
+    }
+    if (room instanceof BossRoom) {
+      BossRoom clear = (BossRoom)room;
       clear.complete();
     }
     shoot = false;
@@ -225,5 +234,24 @@ void deathScreen(){
       fill(250);
       textSize(100);
       text("GAME OVER", 250, 500);
+      text("[P] TO RESTART", 180, 600);
+      if (key == 'p' || key == 'P') {
+        restart();
+      }
   }
+}
+void restart() {
+  while (rooms.size() > 0) {
+    rooms.remove(0);
+  }
+  rooms.add(new LoadingRoom());
+  rooms.add(new BossRoom());
+  rooms.add(new CombatRoom((int)(random(3, 5))));
+  rooms.add(new RestoreRoom());
+  rooms.add(new CombatRoom((int)(random(5, 7))));
+  rooms.add(new RestoreRoom());
+  rooms.add(new ShopRoom());
+  rooms.add(new BossRoom());
+  room = rooms.remove(0);
+  player = new Player(new Gun("pistol", 2, 50, 10, 5, true), new PVector(500, 500));
 }

@@ -3,7 +3,7 @@ public class ShopRoom extends Room{
   private String[] dialogue;
   private float triangleOffset;
   private boolean triangleDirection = true;
-  private int buyCooldown = 0;
+  private boolean buyCooldown = false;
   private NPC merchant;
   
   public ShopRoom(){
@@ -75,9 +75,7 @@ public class ShopRoom extends Room{
   }
   
   public void displayDialogue(String words){
-    textSize(50); 
-    text(words, 150, 870);
-    textSize(12);
+    text(words, 250, 570);
   }
   
   public String checkStandardStats(){
@@ -93,7 +91,6 @@ public class ShopRoom extends Room{
   }
   
   public void displayItems(){
-    buyCooldown ++;
       fill(255,255,0);
       rect(250, 800, 100, 25);
       rect(450, 800, 100, 25);
@@ -130,10 +127,10 @@ public class ShopRoom extends Room{
         fill(0);
         displayDialogue(dialogue[1]);
         
-        if ((key == 'e' || key == 'E') & player.getCoins() >= 20 & buyCooldown > 50) {
+        if (E & player.getCoins() >= 20 & buyCooldown) {
           player.setGun(items.get(0));
           player.addCoins(-20);
-          buyCooldown = 0;
+          buyCooldown = false;
           AverageRPG.shootCooldownMax = 12;
         }
       }
@@ -142,10 +139,10 @@ public class ShopRoom extends Room{
       if (player.getYPos() >= 790 & player.getXPos() >= 450 & player.getXPos() <= 550) {
         fill(0);
         displayDialogue(dialogue[2]);
-        if ((key == 'e' || key == 'E') & player.getCoins() >= 50 & buyCooldown > 50) {
+        if (E & player.getCoins() >= 50 & buyCooldown) {
           player.setGun(items.get(1));
           player.addCoins(-50);
-          buyCooldown = 0;
+          buyCooldown = false;
           AverageRPG.shootCooldownMax = 10;
         }
       }
@@ -155,12 +152,15 @@ public class ShopRoom extends Room{
         fill(0);
         displayDialogue(dialogue[3]);
         
-        if ((key == 'e' || key == 'E') & player.getCoins() >= 100 & buyCooldown > 50) {
+        if (E & player.getCoins() >= 100 & buyCooldown) {
           player.setGun(items.get(2));
           player.addCoins(-100);
-          buyCooldown = 0;
+          buyCooldown = false;
           AverageRPG.shootCooldownMax = 1;
         }
+      }
+      if (player.getYPos() < 790 & !E) {
+        buyCooldown = true;
       }
   }
 }
