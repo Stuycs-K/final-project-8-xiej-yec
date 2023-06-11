@@ -34,5 +34,5 @@ Please us W, A, S, D to move the player character. When you are ready to advance
 ## UML
 
 Character
-![charDiagram_1]{char1.png}
-![charDiagram_2]{char2.png}
+![charDiagram_1](char1.png)
+![charDiagram_2](char2.png)
