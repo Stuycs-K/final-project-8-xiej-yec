@@ -12,7 +12,8 @@ public class RestoreRoom extends Room{
      
   public void displayRoom(){
     super.displayRoom();
-    
+    NPC guide = new NPC("Guide", new PVector(500, 400), dialogue);
+    guide.display();
     fill(255);
     rect(400, 600, 200, 100);
     fill(0);
@@ -23,7 +24,8 @@ public class RestoreRoom extends Room{
       player.setHP(player.getMaxHP());
       fill(255);
       textSize(50); 
-      text(dialogue[0], 250, 800);
+      text(dialogue[0], 150, 870);
+      textSize(12);
     }
     
     
