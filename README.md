@@ -35,4 +35,5 @@ Please us W, A, S, D to move the player character. When you are ready to advance
 
 Character
 ![charDiagram_1](char1.png)
+<img src="char1.png"  width="50%" height="50%">
 ![charDiagram_2](char2.png)
