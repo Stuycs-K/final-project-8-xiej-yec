@@ -141,3 +141,9 @@ HOMEWORK: Created LoadingRoom that would go in the beginning of the room. Create
 CLASSWORK: Fix Guide and Merchant to display. Also fixed position of text and dialogue.
 
 HOMEWORK: Update README file with information
+
+## 6/10/23 + weekend
+
+CLASSWORK : Update README file with information
+
+HOMEWORK : Create PROTOTYPE markdown
