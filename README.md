@@ -33,12 +33,12 @@ Please us W, A, S, D to move the player character. When you are ready to advance
 
 ## UML
 
-Character
+Character\
 <img src="char1.png"  width="50%" height="50%">
 <img src="char2.png"  width="50%" height="50%">
 
-Gun
+Gun\
 <img src="gun.png"  width="50%" height="50%">
 
-Bullet
+Bullet\
 <img src="bullet.png"  width="50%" height="50%">
