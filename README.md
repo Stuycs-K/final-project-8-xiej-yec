@@ -34,15 +34,15 @@ Please us W, A, S, D to move the player character. When you are ready to advance
 ## UML
 
 Character\
-<img src="char1.png"  width="50%" height="50%">
-<img src="char2.png"  width="50%" height="50%">
+<img src="umlImages/char1.png"  width="50%" height="50%">
+<img src="umlImages/char2.png"  width="50%" height="50%">
 
 Gun\
-<img src="gun.png"  width="50%" height="50%">
+<img src="umlImages/gun.png"  width="50%" height="50%">
 
 Bullet\
-<img src="bullet.png"  width="50%" height="50%">
+<img src="umlImages/bullet.png"  width="50%" height="50%">
 
 Room\
-<img src="room1.png"  width="50%" height="50%">
-<img src="room2.png"  width="50%" height="50%">
+<img src="umlImages/room1.png"  width="50%" height="50%">
+<img src="umlImages/room2.png"  width="50%" height="50%">
