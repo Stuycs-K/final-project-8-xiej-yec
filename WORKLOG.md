@@ -68,6 +68,18 @@ CLASSWORK: Tried to help Casey create an arraylist for better organization of th
 
 HOMEWORK: Managed to create a working arraylist of rooms that will follow the order of the arraylist. Also added some code so that when you reach the last room in the arraylist, there will not be a doorway to travel to.
 
+### 6/7/23 - 6/8/23
+
+CLASSWORK: Add Arraylist of rooms to Game branch in order to test out how BossRoom would interact with it.
+
+HOMEWORK: Work on phases of the boss, specfically the third phase of the boss (spawning clones)
+
+## 6/9/23 + weekend
+
+CLASSWORK : Completely finish all phases of the boss (including adding extra/flashy attacks such as shooting multiple bullets, having a shield of enemies and spawning clones)
+
+HOMEWORK : Finish the game, add a victory screen and restart mechanic for game over screen. 
+
 =======
 
 ## GROUP MEMBER 2 (Casey Ye)
