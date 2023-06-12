@@ -3,7 +3,7 @@
 ## Group Info
 Group Name: Postassium Carbonate\
 Members: Jason Xie and Casey Ye\
-Period: 8\
+Period: 8
 
 ## Overview
 "Average RPG" will be a bullet hell game where the player follows a path through a dungeon. The dungeon consists of two regular enemy rooms, an HP restoration room, and a shop room, where players can buy upgraded weapons, in preparation for the final boss fight.
